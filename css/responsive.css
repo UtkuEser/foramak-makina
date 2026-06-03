@@ -1,0 +1,154 @@
+/* ============================================================
+   FORAMAK MAKİNE MÜHENDİSLİK — responsive.css
+   ============================================================ */
+
+
+/* === 1200px — Büyük Tablet === */
+@media (max-width: 1200px) {
+    :root { --container-padding: 2rem; }
+
+    .trust-grid     { grid-template-columns: repeat(2, 1fr); }
+    .services-grid  { grid-template-columns: repeat(2, 1fr); }
+    .sectors-grid   { grid-template-columns: repeat(3, 1fr); }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-xl); }
+
+    .capacity-inner { gap: var(--sp-xl); }
+
+    .hero-title { font-size: 2.6rem; }
+}
+
+
+/* === 960px — Tablet === */
+@media (max-width: 960px) {
+    .hero         { height: auto; min-height: 500px; max-height: none; align-items: center; }
+    .hero-content { position: relative; left: auto; top: auto; width: 100%; max-width: 100%; margin: 0; padding: var(--sp-xl) 0; }
+    .hero-desc         { max-width: 100%; }
+
+    .page-hero-inner  { grid-template-columns: 1fr; }
+    .page-hero-module { display: none; }
+
+    .capacity-inner { grid-template-columns: 1fr; }
+
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { height: 340px; }
+
+    .contact-layout { grid-template-columns: 1fr; }
+    .quote-layout   { grid-template-columns: 1fr; }
+
+    .services-detail-grid { grid-template-columns: 1fr; }
+
+    .machine-specs-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .process-steps { grid-template-columns: repeat(3, 1fr); }
+    .process-connector { display: none; }
+
+    .projects-grid      { grid-template-columns: repeat(2, 1fr); }
+    .projects-page-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .sectors-page-grid { grid-template-columns: 1fr; }
+}
+
+
+/* === 768px — Mobil === */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1.25rem;
+        --sp-3xl: 4rem;
+    }
+
+    /* Header */
+    .nav-list,
+    .nav-cta  { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+
+    /* Hero */
+    .hero              { height: auto; min-height: 82svh; max-height: none; }
+    .hero-bg-video     { object-position: center 38%; }
+    .hero-content      { position: relative; left: auto; top: auto; width: 100%; max-width: 100%; margin: 0; padding: var(--sp-xl) 0 var(--sp-lg); }
+    .hero-title        { font-size: 2.1rem; line-height: 1.1; }
+    .hero-desc         { font-size: 16px; max-width: 100%; line-height: 1.7; }
+    .hero-actions      { flex-direction: column; gap: 12px; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    /* Overlay: dikey gradient — üst az koyu, alt daha koyu */
+    .hero-bg-overlay   {
+        background:
+            linear-gradient(180deg,
+                rgba(7, 20, 90, 0.36) 0%,
+                rgba(11, 15, 26, 0.58) 52%,
+                rgba(11, 15, 26, 0.82) 100%
+            ),
+            linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
+    }
+
+    /* Section titles */
+    .section-title    { font-size: var(--fs-2xl); }
+    .page-hero-title  { font-size: 1.8rem; }
+
+    /* Trust */
+    .trust-grid { grid-template-columns: 1fr; }
+
+    /* Services */
+    .services-grid        { grid-template-columns: 1fr; }
+    .services-detail-grid { grid-template-columns: 1fr; }
+
+    /* Sectors */
+    .sectors-grid      { grid-template-columns: repeat(2, 1fr); }
+    .sectors-page-grid { grid-template-columns: 1fr; }
+
+    /* Projects */
+    .projects-grid      { grid-template-columns: 1fr; }
+    .projects-page-grid { grid-template-columns: 1fr; }
+
+    /* Machine */
+    .machine-specs-grid { grid-template-columns: 1fr; }
+
+    /* Capacity table */
+    .capacity-table-wrap { overflow-x: auto; }
+    .capacity-table { min-width: 560px; }
+
+    /* Process */
+    .process-steps { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+
+    /* CTA */
+    .cta-band-title   { font-size: var(--fs-2xl); }
+    .cta-band-actions { flex-direction: column; align-items: center; }
+    .cta-band-actions .btn { width: 100%; justify-content: center; }
+
+    /* Footer */
+    .footer-grid   { grid-template-columns: 1fr; gap: var(--sp-lg); }
+    .footer-desc   { max-width: 100%; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+
+    /* Form */
+    .form-row { grid-template-columns: 1fr; }
+    .form-card { padding: var(--sp-md); }
+
+    /* About */
+    .about-values { grid-template-columns: 1fr; }
+
+    /* Quote */
+    .quote-info-title { font-size: var(--fs-xl); }
+}
+
+
+/* === 480px — Küçük Mobil === */
+@media (max-width: 480px) {
+    :root { --container-padding: 1rem; }
+
+    .hero-title { font-size: 1.85rem; }
+    .hero-badge { font-size: 0.65rem; }
+
+    .sectors-grid { grid-template-columns: 1fr; }
+
+    .process-steps { grid-template-columns: 1fr; }
+
+    .mobile-nav-link { font-size: var(--fs-lg); }
+
+    .service-detail-card { padding: var(--sp-lg); }
+
+    .contact-info-block { padding: var(--sp-lg); }
+
+    .footer-grid { gap: var(--sp-md); }
+}
