@@ -65,105 +65,123 @@
     <!-- ===== HERO ===== -->
     <section class="hero" aria-label="Giriş">
 
-        <div class="hero-media" aria-hidden="true">
-            <video class="hero-bg-video" autoplay muted loop playsinline>
-                <source src="assets/videos/hero-welding.mp4" type="video/mp4">
-            </video>
-            <div class="hero-bg-overlay"></div>
+        <!-- Video Backgrounds -->
+        <div class="hero-slider" aria-hidden="true">
+            <div class="hero-slide is-active">
+                <video class="hero-bg-video" autoplay muted playsinline preload="auto">
+                    <source src="assets/videos/hero-welding.mp4" type="video/mp4">
+                </video>
+                <div class="hero-bg-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <video class="hero-bg-video" muted playsinline preload="auto">
+                    <source src="assets/videos/hero-welding-2.mp4" type="video/mp4">
+                </video>
+                <div class="hero-bg-overlay"></div>
+            </div>
         </div>
 
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge" aria-label="Konum">
-                    <span class="hero-badge-dot" aria-hidden="true"></span>
-                    Ankara / İvedik OSB
+
+                <!-- Slide 1 -->
+                <div class="hero-slide-content is-active">
+                    <div class="hero-badge" aria-label="Konum">
+                        <span class="hero-badge-dot" aria-hidden="true"></span>
+                        Ankara / İvedik OSB
+                    </div>
+                    <h1 class="hero-title">
+                        Lazer Kesim ve Makine İmalatında<br>
+                        <span style="color: var(--color-yellow);">Hassas Üretim Gücü</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Foramak Makine; sac lazer kesim, boru/profil lazer kesim, sac büküm, kaynaklı imalat
+                        ve özel metal üretim süreçlerinde teknik çizime uygun, ölçülü ve güvenilir çözümler sunar.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
+                        <a href="hizmetler.html" class="btn btn-outline-white">Hizmetleri İncele</a>
+                    </div>
                 </div>
 
-                <h1 class="hero-title">
-                    Lazer Kesim ve Makine İmalatında<br>
-                    <span style="color: var(--color-yellow);">Hassas Üretim Gücü</span>
-                </h1>
-
-                <p class="hero-desc">
-                    Foramak Makine; sac lazer kesim, boru/profil lazer kesim, sac büküm, kaynaklı imalat
-                    ve özel metal üretim süreçlerinde teknik çizime uygun, ölçülü ve güvenilir çözümler sunar.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
-                    <a href="hizmetler.html" class="btn btn-outline-white">Hizmetleri İncele</a>
+                <!-- Slide 2 -->
+                <div class="hero-slide-content">
+                    <div class="hero-badge" aria-label="Üretim">
+                        <span class="hero-badge-dot" aria-hidden="true"></span>
+                        Boru / Profil Lazer Kesim
+                    </div>
+                    <h1 class="hero-title">
+                        Boru ve Profil Lazer Kesimde<br>
+                        <span style="color: var(--color-yellow);">Teknik Üretim Kabiliyeti</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Yuvarlak boru ve profil gruplarında ölçülü kesim, delik, kanal ve form uygulamaları için
+                        teknik çizime bağlı üretim desteği sağlıyoruz.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
+                        <a href="hizmetler.html" class="btn btn-outline-white">Hizmetleri İncele</a>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-    </section>
+        <!-- Left Arrow -->
+        <button class="hero-arrow hero-arrow--prev" aria-label="Önceki video">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
 
+        <!-- Right Arrow -->
+        <button class="hero-arrow hero-arrow--next" aria-label="Sonraki video">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
 
-    <!-- ===== GÜVEN KARTLARI ===== -->
-    <section class="trust-section" aria-label="Üretim kabiliyetleri">
-        <div class="container">
-            <div class="trust-grid">
-
-                <article class="trust-card reveal reveal-d1">
-                    <div class="trust-card-icon" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="3"/>
-                            <line x1="12" y1="2" x2="12" y2="5"/>
-                            <line x1="12" y1="19" x2="12" y2="22"/>
-                            <line x1="2" y1="12" x2="5" y2="12"/>
-                            <line x1="19" y1="12" x2="22" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 class="trust-card-title">Hassas Lazer Kesim</h3>
-                    <p class="trust-card-desc">Sac, boru ve profil gruplarında teknik çizime uygun kesim çözümleri. 3 kW boru lazer kesim altyapısıyla üretim.</p>
-                </article>
-
-                <article class="trust-card reveal reveal-d2">
-                    <div class="trust-card-icon" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18M9 21V9"/>
-                        </svg>
-                    </div>
-                    <h3 class="trust-card-title">Teknik Çizime Göre Üretim</h3>
-                    <p class="trust-card-desc">DXF, DWG veya PDF çizimlere göre proje değerlendirme ve üretim planlama süreçleri.</p>
-                </article>
-
-                <article class="trust-card reveal reveal-d3">
-                    <div class="trust-card-icon" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 class="trust-card-title">Kaynaklı İmalat</h3>
-                    <p class="trust-card-desc">Paslanmaz, çelik ve alüminyum gruplarında proje ihtiyacına göre kaynaklı üretim ve montaj süreçleri.</p>
-                </article>
-
-                <article class="trust-card reveal reveal-d4">
-                    <div class="trust-card-icon" aria-hidden="true">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                    </div>
-                    <h3 class="trust-card-title">Hızlı Teklif Süreci</h3>
-                    <p class="trust-card-desc">Malzeme, ölçü ve adet bilgilerine göre net teklif akışı. Teknik çiziminizi gönderin, dönüş alın.</p>
-                </article>
-
-            </div>
+        <!-- Dots — alt orta -->
+        <div class="hero-dots" role="tablist" aria-label="Slide seçimi">
+            <button class="hero-dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Video 1"></button>
+            <button class="hero-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Video 2"></button>
         </div>
+
     </section>
 
 
     <!-- ===== HİZMETLER ===== -->
     <section class="section section--white" id="hizmetler" aria-labelledby="hizmetler-title">
         <div class="container">
+
+            <!-- Capabilities strip — hero'dan bu section'a köprü -->
+            <div class="capabilities-strip reveal">
+                <div class="cap-item">
+                    <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+                    <div>
+                        <div class="cap-label">Hassas Lazer Kesim</div>
+                        <div class="cap-sub">Sac, boru ve profil grupları</div>
+                    </div>
+                </div>
+                <div class="cap-item">
+                    <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    <div>
+                        <div class="cap-label">Teknik Çizime Göre Üretim</div>
+                        <div class="cap-sub">DXF · DWG · PDF desteği</div>
+                    </div>
+                </div>
+                <div class="cap-item">
+                    <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <div>
+                        <div class="cap-label">Kaynaklı İmalat</div>
+                        <div class="cap-sub">Paslanmaz, çelik, alüminyum</div>
+                    </div>
+                </div>
+                <div class="cap-item">
+                    <svg class="cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <div>
+                        <div class="cap-label">Hızlı Teklif Süreci</div>
+                        <div class="cap-sub">Malzeme, ölçü ve adet bilgisi</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="section-header reveal">
                 <span class="section-label">Üretim Hizmetleri</span>
                 <h2 class="section-title" id="hizmetler-title">Üretim Hizmetlerimiz</h2>
@@ -362,66 +380,145 @@
                 </p>
             </div>
 
-            <div class="sectors-grid">
+            <div class="sector-featured-grid">
 
-                <article class="sector-card reveal reveal-d1">
-                    <span class="sector-card-icon" aria-hidden="true">⚙️</span>
-                    <h3 class="sector-card-title">Makine İmalatı</h3>
-                    <p class="sector-card-desc">Sac, boru ve profil parçalarının kesim, büküm ve kaynaklı üretim süreçleri.</p>
+                <!-- SAVUNMA SANAYİ — Featured / Large -->
+                <article class="sector-block sector-block--featured reveal reveal-d1">
+                    <div class="sector-block-bg" aria-hidden="true"></div>
+                    <!-- Teknik hassasiyet silueti — dekoratif arka plan -->
+                    <svg class="sector-block-deco" viewBox="0 0 190 190" fill="none" stroke="currentColor" stroke-width="0.7" aria-hidden="true">
+                        <polygon points="95,8 166,48 166,128 95,168 24,128 24,48"/>
+                        <polygon points="95,30 144,58 144,114 95,142 46,114 46,58"/>
+                        <circle cx="95" cy="90" r="30"/>
+                        <circle cx="95" cy="90" r="14"/>
+                        <circle cx="95" cy="90" r="4" stroke-width="0.5"/>
+                        <line x1="95" y1="8" x2="95" y2="30"/>
+                        <line x1="95" y1="150" x2="95" y2="168"/>
+                        <line x1="24" y1="90" x2="46" y2="90"/>
+                        <line x1="144" y1="90" x2="166" y2="90"/>
+                        <line x1="95" y1="60" x2="95" y2="66"/>
+                        <line x1="95" y1="114" x2="95" y2="120"/>
+                        <line x1="65" y1="90" x2="71" y2="90"/>
+                        <line x1="119" y1="90" x2="125" y2="90"/>
+                    </svg>
+                    <div class="sector-block-content">
+                        <div class="sector-block-head">
+                            <svg class="sector-block-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polygon points="20,3 34,11 34,29 20,37 6,29 6,11"/>
+                                <circle cx="20" cy="20" r="7"/>
+                                <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.55"/>
+                                <line x1="20" y1="13" x2="20" y2="15.5"/>
+                                <line x1="20" y1="24.5" x2="20" y2="27"/>
+                                <line x1="13" y1="20" x2="15.5" y2="20"/>
+                                <line x1="24.5" y1="20" x2="27" y2="20"/>
+                            </svg>
+                            <span class="sector-block-badge">Öncelikli Sektör</span>
+                        </div>
+                        <h3 class="sector-block-title">Savunma Sanayi<br>Parça &amp; Konstrüksiyon</h3>
+                        <p class="sector-block-desc">Teknik çizime dayalı özel parça ve yapısal konstrüksiyon üretimi. Hassas toleranslar, güvenilir malzeme seçimi ve üretim süreci disiplini gerektiren projelerde tam teknik destek.</p>
+                        <div class="sector-block-specs">
+                            <span class="sector-spec">Hassas Üretim</span>
+                            <span class="sector-spec">Tolerans Disiplini</span>
+                            <span class="sector-spec">Özel Parça</span>
+                            <span class="sector-spec">Teknik Çizim Uyumu</span>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="sector-card reveal reveal-d2">
-                    <span class="sector-card-icon" aria-hidden="true">🔩</span>
-                    <h3 class="sector-card-title">Otomotiv Yan Sanayi</h3>
-                    <p class="sector-card-desc">Hassas ölçülerde parça üretimi ve teknik çizime uygun metal işleme.</p>
+                <!-- Makina İmalatı -->
+                <article class="sector-block reveal reveal-d2">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="16" cy="16" r="5.5"/>
+                        <circle cx="16" cy="16" r="2" fill="currentColor" opacity="0.35"/>
+                        <line x1="16" y1="4" x2="16" y2="7"/><line x1="16" y1="25" x2="16" y2="28"/>
+                        <line x1="4" y1="16" x2="7" y2="16"/><line x1="25" y1="16" x2="28" y2="16"/>
+                        <line x1="7.8" y1="7.8" x2="9.9" y2="9.9"/><line x1="22.1" y1="22.1" x2="24.2" y2="24.2"/>
+                        <line x1="22.1" y1="9.9" x2="24.2" y2="7.8"/><line x1="7.8" y1="24.2" x2="9.9" y2="22.1"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Makina İmalatı</h3>
+                    <p class="sector-block-desc-sm">Sac, boru ve profil parçalarının kesim, büküm ve kaynaklı üretim süreçleri.</p>
                 </article>
 
-                <article class="sector-card reveal reveal-d3">
-                    <span class="sector-card-icon" aria-hidden="true">🛡️</span>
-                    <h3 class="sector-card-title">Savunma Sanayi</h3>
-                    <p class="sector-card-desc">Teknik çizime dayalı özel parça ve konstrüksiyon üretimi.</p>
+                <!-- Endüstriyel Tesisler -->
+                <article class="sector-block reveal reveal-d3">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="4" y="14" width="24" height="14"/>
+                        <rect x="7" y="8" width="5" height="6"/>
+                        <rect x="20" y="8" width="5" height="6"/>
+                        <line x1="9.5" y1="4" x2="9.5" y2="8"/>
+                        <line x1="22.5" y1="4" x2="22.5" y2="8"/>
+                        <rect x="7" y="19" width="4" height="4"/>
+                        <rect x="14" y="19" width="4" height="4"/>
+                        <rect x="21" y="19" width="4" height="4"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Endüstriyel Tesisler</h3>
+                    <p class="sector-block-desc-sm">Tesis içi ekipman parçaları, paslanmaz ve çelik imalat.</p>
                 </article>
 
-                <article class="sector-card reveal reveal-d4">
-                    <span class="sector-card-icon" aria-hidden="true">🏗️</span>
-                    <h3 class="sector-card-title">İnşaat ve Çelik Konstrüksiyon</h3>
-                    <p class="sector-card-desc">Çelik yapı elemanları, profil işleme ve kaynaklı imalat desteği.</p>
+                <!-- İnşaat ve Çelik -->
+                <article class="sector-block reveal reveal-d1">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="16" y1="4" x2="16" y2="28"/>
+                        <line x1="10" y1="4" x2="22" y2="4"/>
+                        <line x1="10" y1="28" x2="22" y2="28"/>
+                        <line x1="11" y1="14" x2="21" y2="14"/>
+                        <line x1="6" y1="9" x2="11" y2="14"/>
+                        <line x1="6" y1="23" x2="11" y2="18"/>
+                        <line x1="26" y1="9" x2="21" y2="14"/>
+                        <line x1="26" y1="23" x2="21" y2="18"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">İnşaat ve Çelik Konstrüksiyon</h3>
+                    <p class="sector-block-desc-sm">Çelik yapı elemanları, profil işleme ve kaynaklı imalat desteği.</p>
                 </article>
 
-                <article class="sector-card reveal">
-                    <span class="sector-card-icon" aria-hidden="true">🏭</span>
-                    <h3 class="sector-card-title">Endüstriyel Tesisler</h3>
-                    <p class="sector-card-desc">Tesis içi ekipman parçaları, paslanmaz ve çelik imalat.</p>
+                <!-- Enerji ve Altyapı -->
+                <article class="sector-block reveal reveal-d2">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 4L8 18h8l-2 10 10-14h-8l2-10z"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Enerji ve Altyapı</h3>
+                    <p class="sector-block-desc-sm">Enerji tesisi ekipmanları için metal parça ve konstrüksiyon üretimi.</p>
                 </article>
 
-                <article class="sector-card reveal reveal-d1">
-                    <span class="sector-card-icon" aria-hidden="true">🪑</span>
-                    <h3 class="sector-card-title">Mobilya Metal Aksamları</h3>
-                    <p class="sector-card-desc">Lazer kesim ve büküm ile hassas metal aksam üretimi.</p>
+                <!-- Gıda ve Paslanmaz -->
+                <article class="sector-block reveal reveal-d3">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <ellipse cx="16" cy="9" rx="8" ry="3"/>
+                        <path d="M8 9v14a2 2 0 002 2h12a2 2 0 002-2V9"/>
+                        <line x1="20" y1="25" x2="24" y2="28"/>
+                        <line x1="22" y1="28" x2="26" y2="28"/>
+                        <line x1="11" y1="15" x2="21" y2="15" stroke-dasharray="2 2"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Gıda ve Paslanmaz Ekipman</h3>
+                    <p class="sector-block-desc-sm">Hijyenik paslanmaz imalat; kesim, kaynak ve montaj süreçleri.</p>
                 </article>
 
-                <article class="sector-card reveal reveal-d2">
-                    <span class="sector-card-icon" aria-hidden="true">🍽️</span>
-                    <h3 class="sector-card-title">Gıda ve Paslanmaz Ekipman</h3>
-                    <p class="sector-card-desc">Hijyenik paslanmaz imalat; kesim, kaynak ve montaj süreçleri.</p>
+                <!-- Su Arıtma -->
+                <article class="sector-block reveal reveal-d1">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="4" y1="16" x2="10" y2="16"/>
+                        <line x1="22" y1="16" x2="28" y2="16"/>
+                        <rect x="10" y="10" width="12" height="12" rx="2"/>
+                        <line x1="13" y1="13" x2="13" y2="19"/>
+                        <line x1="16" y1="13" x2="16" y2="19"/>
+                        <line x1="19" y1="13" x2="19" y2="19"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Su Arıtma ve Tesisat</h3>
+                    <p class="sector-block-desc-sm">Boru, flanş ve paslanmaz tesisat parçaları için teknik üretim.</p>
                 </article>
 
-                <article class="sector-card reveal reveal-d3">
-                    <span class="sector-card-icon" aria-hidden="true">✦</span>
-                    <h3 class="sector-card-title">Dekoratif Metal</h3>
-                    <p class="sector-card-desc">Lazer kesim ile ince detay çalışmaları ve özel form üretimi.</p>
-                </article>
-
-                <article class="sector-card reveal reveal-d4">
-                    <span class="sector-card-icon" aria-hidden="true">💧</span>
-                    <h3 class="sector-card-title">Su Arıtma ve Tesisat</h3>
-                    <p class="sector-card-desc">Boru, flanş ve paslanmaz tesisat parçaları için teknik üretim.</p>
-                </article>
-
-                <article class="sector-card reveal">
-                    <span class="sector-card-icon" aria-hidden="true">⚡</span>
-                    <h3 class="sector-card-title">Enerji ve Altyapı</h3>
-                    <p class="sector-card-desc">Enerji tesisi ekipmanları için metal parça ve konstrüksiyon üretimi.</p>
+                <!-- Dekoratif Metal -->
+                <article class="sector-block reveal reveal-d2">
+                    <svg class="sector-block-icon-sm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="14" height="14" transform="rotate(45 16 16)"/>
+                        <rect x="12.5" y="12.5" width="7" height="7" transform="rotate(45 16 16)"/>
+                        <circle cx="16" cy="6" r="1.2" fill="currentColor"/>
+                        <circle cx="26" cy="16" r="1.2" fill="currentColor"/>
+                        <circle cx="16" cy="26" r="1.2" fill="currentColor"/>
+                        <circle cx="6" cy="16" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <h3 class="sector-block-title-sm">Dekoratif Metal</h3>
+                    <p class="sector-block-desc-sm">Lazer kesim ile ince detay çalışmaları ve özel form üretimi.</p>
                 </article>
 
             </div>
@@ -627,6 +724,36 @@
     </section>
 
 
+    <!-- ===== REFERANSLAR ===== -->
+    <section class="references-section references-section--marquee section--white" aria-labelledby="ref-home-title">
+        <div class="container">
+            <div class="section-header--center reveal">
+                <span class="section-label">Referanslar</span>
+                <h2 class="section-title" id="ref-home-title">Güvene Dayalı İş Birlikleri</h2>
+                <p class="section-desc" style="max-width:540px;">
+                    Farklı sektörlerde üretim, imalat ve teknik çözüm süreçlerinde iş ortaklarımızla güvene dayalı çalışmalar yürütüyoruz.
+                </p>
+            </div>
+        </div>
+
+        <div class="ref-marquee" aria-hidden="true">
+            <div class="ref-track">
+                <div class="ref-card"><img src="assets/images/references/alarko_logo.svg" alt="Alarko" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/bochu_logo.svg" alt="Bochu" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/geka_logo.svg" alt="GEKA" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/mke_logo.svg" alt="MKE" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/wilo_logo.svg" alt="WILO" class="ref-logo"></div>
+                <!-- Seamless loop için kopya -->
+                <div class="ref-card"><img src="assets/images/references/alarko_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/bochu_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/geka_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/mke_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/wilo_logo.svg" alt="" class="ref-logo"></div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- ===== CTA BAND ===== -->
     <section class="cta-band" aria-labelledby="cta-title">
         <div class="container">
@@ -636,8 +763,32 @@
                     Teknik Çiziminizi Gönderin,<br>Projeniz İçin Teklif Alın
                 </h2>
                 <p class="cta-band-desc">
-                    Malzeme, ölçü, adet ve teknik çizim bilgilerinizi paylaşarak üretim süreciniz için hızlı teklif talebinde bulunabilirsiniz.
+                    DXF, DWG veya PDF formatındaki teknik çiziminizi iletin; malzeme, ölçü ve adet bilgilerinize göre net teklif alın.
                 </p>
+
+                <div class="cta-steps" aria-label="Teklif süreci">
+                    <div class="cta-step">
+                        <span class="cta-step-num">01</span>
+                        <div class="cta-step-title">Çizim Gönderin</div>
+                        <div class="cta-step-sub">DXF · DWG · PDF</div>
+                    </div>
+                    <div class="cta-step">
+                        <span class="cta-step-num">02</span>
+                        <div class="cta-step-title">Proje Değerlendirme</div>
+                        <div class="cta-step-sub">Teknik analiz</div>
+                    </div>
+                    <div class="cta-step">
+                        <span class="cta-step-num">03</span>
+                        <div class="cta-step-title">Hızlı Teklif</div>
+                        <div class="cta-step-sub">Maliyet &amp; termin</div>
+                    </div>
+                    <div class="cta-step">
+                        <span class="cta-step-num">04</span>
+                        <div class="cta-step-title">Üretim Planı</div>
+                        <div class="cta-step-sub">Kesim · Büküm · Kaynak</div>
+                    </div>
+                </div>
+
                 <div class="cta-band-actions">
                     <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
                     <a href="iletisim.html" class="btn btn-outline-white">İletişime Geç</a>
@@ -719,6 +870,6 @@
     </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>
