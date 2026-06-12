@@ -385,10 +385,10 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
     padding: 20px 20px 14px;
 }
 
-/* 4 × 2 kart grid */
+/* 5 × 2 kart grid */
 .mega-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 8px;
     margin-bottom: 14px;
 }

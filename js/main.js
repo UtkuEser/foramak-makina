@@ -80,6 +80,7 @@
         'metal-isleme.html':             'hizmetler.html',
         'ozel-proje-imalati.html':       'hizmetler.html',
         'moduler-tesisat-sistemleri.html': 'hizmetler.html',
+        'aritma-sistemleri.html':          'hizmetler.html',
     };
     var effectivePath = sectionMap[pagePath] || pagePath;
 
