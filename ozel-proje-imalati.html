@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foramak Makine; DXF/DWG teknik çizime dayalı proje bazlı özel parça ve konstrüksiyon üretimi. Malzeme ve yöntem projeye göre planlanır; prototipten küçük seriye üretim.">
+    <title>Özel Proje İmalatı | Foramak Makine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/responsive.css?v=7">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" role="banner">
+    <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Foramak Makine Ana Sayfa">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <polygon points="16,2 30,9 30,23 16,30 2,23 2,9" stroke="#FFE21F" stroke-width="1.5"/>
+                <circle cx="16" cy="16" r="5" fill="#FFE21F" fill-opacity="0.12"/>
+                <circle cx="16" cy="16" r="3" fill="#FFE21F"/>
+            </svg>
+            <div class="logo-text">
+                <span class="logo-primary">FORAMAK</span>
+                <span class="logo-secondary">Makine Mühendislik</span>
+            </div>
+        </a>
+        <nav class="nav" aria-label="Ana menü">
+            <ul class="nav-list" role="list">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+                <li class="nav-item nav-item--mega">
+                    <a href="hizmetler.html" class="nav-link">Hizmetler <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg></a>
+                    <div class="mega-menu" role="region" aria-label="Hizmet kategorileri">
+                        <div class="mega-inner">
+                            <div class="mega-grid">
+                                <a href="sac-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Lazer Kesim</strong><span class="mega-card-desc">Sac metal gruplarında hassas kesim</span></a>
+                                <a href="boru-profil-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Boru / Profil Lazer Kesim</strong><span class="mega-card-desc">Boru ve profil gruplarında teknik kesim</span></a>
+                                <a href="sac-bukum.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Büküm</strong><span class="mega-card-desc">Ölçüye göre form ve açı çalışmaları</span></a>
+                                <a href="kaynakli-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Kaynaklı İmalat</strong><span class="mega-card-desc">Kaynak ve montaj süreçleri</span></a>
+                                <a href="paslanmaz-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Paslanmaz İmalat</strong><span class="mega-card-desc">Paslanmaz çelik üretim desteği</span></a>
+                                <a href="aluminyum-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Alüminyum İmalat</strong><span class="mega-card-desc">Hafif yapı ve özel parça üretimi</span></a>
+                                <a href="metal-isleme.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Metal İşleme</strong><span class="mega-card-desc">Delme, form ve yüzey hazırlama</span></a>
+                                <a href="ozel-proje-imalati.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Özel Proje İmalatı</strong><span class="mega-card-desc">Proje bazlı özel üretim</span></a>
+                            </div>
+                            <div class="mega-footer">
+                                <a href="hizmetler.html" class="mega-footer-link">Tüm Hizmetleri İncele <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="projeler.html" class="nav-link">Projeler</a></li>
+                <li><a href="sektorler.html" class="nav-link">Sektörler</a></li>
+                <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+            </ul>
+            <a href="teklif-al.html" class="btn btn-primary nav-cta">Teklif Al</a>
+        </nav>
+        <button class="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+<nav class="mobile-menu" aria-label="Mobil menü">
+    <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+    <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+    <div class="mobile-nav-group">
+        <div class="mobile-nav-row">
+            <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+            <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Hizmetler alt menüsünü aç">
+                <span class="mobile-submenu-arrow">⌄</span>
+            </button>
+        </div>
+        <div class="mobile-submenu" id="mobile-services-submenu" hidden>
+            <a href="sac-lazer-kesim.html">Sac Lazer Kesim</a>
+            <a href="boru-profil-lazer-kesim.html">Boru / Profil Lazer Kesim</a>
+            <a href="sac-bukum.html">Sac Büküm</a>
+            <a href="kaynakli-imalat.html">Kaynaklı İmalat</a>
+            <a href="paslanmaz-imalat.html">Paslanmaz İmalat</a>
+            <a href="aluminyum-imalat.html">Alüminyum İmalat</a>
+            <a href="metal-isleme.html">Metal İşleme</a>
+            <a href="ozel-proje-imalati.html">Özel Proje İmalatı</a>
+        </div>
+    </div>
+    <a href="projeler.html" class="mobile-nav-link">Projeler</a>
+    <a href="sektorler.html" class="mobile-nav-link">Sektörler</a>
+    <a href="iletisim.html" class="mobile-nav-link">İletişim</a>
+    <a href="teklif-al.html" class="btn btn-primary mobile-nav-cta">Teklif Al</a>
+</nav>
+
+<main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Sayfa başlığı">
+        <div class="container">
+            <div class="page-hero-inner">
+                <div class="page-hero-left">
+                    <nav class="breadcrumb" aria-label="Sayfa yolu">
+                        <a href="index.html">Ana Sayfa</a>
+                        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+                        <a href="hizmetler.html">Hizmetler</a>
+                        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+                        <span aria-current="page">Özel Proje İmalatı</span>
+                    </nav>
+                    <h1 class="page-hero-title">
+                        Özel Proje<br>İmalatı
+                    </h1>
+                    <p class="page-hero-desc">
+                        Foramak Makine; teknik çizime dayalı, proje bazlı özel parça ve konstrüksiyon üretimi sunar. Malzeme grubu ve üretim yöntemi proje ihtiyacına göre belirlenir.
+                    </p>
+                    <div class="page-hero-actions">
+                        <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
+                        <a href="hizmetler.html" class="btn btn-outline-light">Tüm Hizmetler</a>
+                    </div>
+                </div>
+                <div class="page-hero-module" aria-hidden="true">
+                    <div class="ph-service-card">
+                        <div class="ph-sc-label">Özel Üretim</div>
+                    </div>
+                    <div class="ph-service-card">
+                        <div class="ph-sc-label">Teknik Çizim</div>
+                    </div>
+                    <div class="ph-service-card">
+                        <div class="ph-sc-label">Konstrüksiyon</div>
+                    </div>
+                    <div class="ph-service-card">
+                        <div class="ph-sc-label">Prototip</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KAPSAM -->
+    <section class="section" id="kapsam" aria-labelledby="kapsam-title">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Hizmet Kapsamı</span>
+                <h2 class="section-title" id="kapsam-title">Özel Proje İmalatı</h2>
+            </div>
+            <div class="service-scope-grid">
+                <div class="service-scope-main reveal">
+                    <p>Özel proje imalatı; DXF, DWG veya PDF formatında teknik çizime dayalı olarak proje bazında özel parça, konstrüksiyon elemanı ve entegre montaj parçası üretimini kapsar. Malzeme grubu (çelik, paslanmaz, alüminyum), kalınlık ve üretim yöntemi (kesim, büküm, kaynak) projeye göre belirlenir.</p>
+                    <p>Teknik çizim olmayan durumlarda numune veya sözlü teknik tanım bazlı çalışma değerlendirilebilir. Prototip, küçük seri ve tek parça üretimde teknik danışmanlık dahilinde üretim süreci yönetilir.</p>
+                    <div class="service-detail-tags" style="margin-top:var(--sp-md)">
+                        <span class="stag">DXF / DWG / PDF</span>
+                        <span class="stag">Prototip</span>
+                        <span class="stag">Küçük Seri</span>
+                        <span class="stag">Teknik Danışmanlık</span>
+                    </div>
+                </div>
+                <div class="service-scope-side reveal reveal-d2">
+                    <div class="spec-block">
+                        <div class="spec-label">Teknik Çizim</div>
+                        <div class="spec-value">DXF · DWG · PDF</div>
+                    </div>
+                    <div class="spec-block">
+                        <div class="spec-label">Üretim Tipi</div>
+                        <div class="spec-value">Tekil · Prototip · Küçük Seri</div>
+                    </div>
+                    <div class="spec-block">
+                        <div class="spec-label">Malzeme</div>
+                        <div class="spec-value">Çelik · Paslanmaz · Alüminyum</div>
+                    </div>
+                    <div class="spec-block">
+                        <div class="spec-label">Süreç</div>
+                        <div class="spec-value">Kesim · Büküm · Kaynak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÜREÇ -->
+    <section class="section section--light" aria-labelledby="surec-title">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Üretim Süreci</span>
+                <h2 class="section-title" id="surec-title">Proje Bazlı Üretim Adımları</h2>
+            </div>
+            <div class="material-grid reveal">
+                <div class="material-cell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <strong>01 — Teknik Değerlendirme</strong>
+                    <span>Teknik çizim veya numune incelenerek malzeme ve yöntem belirlenir</span>
+                </div>
+                <div class="material-cell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                    <strong>02 — Üretim Planlaması</strong>
+                    <span>Lazer kesim, büküm ve kaynak süreçleri proje planına göre sıralanır</span>
+                </div>
+                <div class="material-cell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <strong>03 — Üretim</strong>
+                    <span>Kesim, büküm ve kaynak süreçleri entegre biçimde yürütülür</span>
+                </div>
+                <div class="material-cell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>04 — Teslim</strong>
+                    <span>Boyutsal kontrol sonrası montaja hazır teslim</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UYGULAMA -->
+    <section class="section" aria-labelledby="kullanim-title">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Kullanım Alanları</span>
+                <h2 class="section-title" id="kullanim-title">Hangi Projelerde Kullanılır?</h2>
+            </div>
+            <div class="sector-featured-grid reveal">
+                <div class="sector-card sector-card--featured">
+                    <div class="sector-card-num">01</div>
+                    <h3 class="sector-card-title">Makine Parçası</h3>
+                    <p class="sector-card-desc">Standart dışı boyut ve forma sahip makine parçaları için teknik çizim bazlı üretim.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-card-num">02</div>
+                    <h3 class="sector-card-title">Konstrüksiyon Elemanı</h3>
+                    <p class="sector-card-desc">Özel boyut ve bağlantı gereksinimi olan yapısal metal elemanlar için proje bazlı imalat.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-card-num">03</div>
+                    <h3 class="sector-card-title">Ekipman Aksamı</h3>
+                    <p class="sector-card-desc">Endüstriyel ekipman parçası, yedek parça ve ısmarlama bileşen üretimi.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-card-num">04</div>
+                    <h3 class="sector-card-title">Prototip</h3>
+                    <p class="sector-card-desc">Mühendislik geliştirme süreçleri için metal prototip ve doğrulama parçası üretimi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-label="Teklif al">
+        <div class="container cta-band-inner">
+            <div>
+                <h2 class="cta-band-title">Projeniz için teknik bilgi alın.</h2>
+                <p class="cta-band-sub">Teknik çiziminizi paylaşın; malzeme, ölçü ve üretim yöntemi üzerine değerlendirme yapalım.</p>
+            </div>
+            <a href="teklif-al.html" class="btn btn-primary cta-band-btn">Teklif Al</a>
+        </div>
+    </section>
+
+</main>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo footer-logo" aria-label="Foramak Makine Ana Sayfa">
+                    <svg class="logo-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                        <polygon points="16,2 30,9 30,23 16,30 2,23 2,9" stroke="#FFE21F" stroke-width="1.5"/>
+                        <circle cx="16" cy="16" r="5" fill="#FFE21F" fill-opacity="0.12"/>
+                        <circle cx="16" cy="16" r="3" fill="#FFE21F"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-primary">FORAMAK</span>
+                        <span class="logo-secondary">Makine Mühendislik</span>
+                    </div>
+                </a>
+                <p class="footer-desc">Foramak Makine; lazer kesim, büküm, kaynaklı imalat ve özel metal üretim süreçlerinde teknik çözümler sunar.</p>
+            </div>
+            <div>
+                <p class="footer-col-title">Hizmetler</p>
+                <ul class="footer-links">
+                    <li><a href="sac-lazer-kesim.html" class="footer-link">Sac Lazer Kesim</a></li>
+                    <li><a href="boru-profil-lazer-kesim.html" class="footer-link">Boru/Profil Lazer Kesim</a></li>
+                    <li><a href="kaynakli-imalat.html" class="footer-link">Kaynaklı İmalat</a></li>
+                    <li><a href="moduler-tesisat-sistemleri.html" class="footer-link">Modüler Tesisat</a></li>
+                    <li><a href="hizmetler.html" class="footer-link">Tüm Hizmetler</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-col-title">Kurumsal</p>
+                <ul class="footer-links">
+                    <li><a href="hakkimizda.html" class="footer-link">Hakkımızda</a></li>
+                    <li><a href="projeler.html" class="footer-link">Projeler</a></li>
+                    <li><a href="sektorler.html" class="footer-link">Sektörler</a></li>
+                    <li><a href="teklif-al.html" class="footer-link">Teklif Al</a></li>
+                    <li><a href="iletisim.html" class="footer-link">İletişim</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-col-title">İletişim</p>
+                <div class="footer-contact-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    <a href="tel:+905497804220">0549 780 42 20</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <a href="mailto:foramak@foramaklazer.com">foramak@foramaklazer.com</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>İvedik OSB, 1401. Sk. 45/A,<br>06810 Yenimahalle / Ankara</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© <span class="js-year"></span> Foramak Makine Mühendislik. Tüm hakları saklıdır.</p>
+            <a href="#" class="footer-eek" aria-label="EEK tarafından tasarlandı">by EEK</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js?v=8"></script>
+</body>
+</html>

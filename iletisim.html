@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/responsive.css?v=7">
     <style>
         /* ===== CONTACT PAGE SPECIFIC ===== */
         .contact-layout {
@@ -329,7 +329,26 @@
             <ul class="nav-list" role="list">
                 <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
-                <li><a href="hizmetler.html" class="nav-link">Hizmetler</a></li>
+                <li class="nav-item nav-item--mega">
+                    <a href="hizmetler.html" class="nav-link">Hizmetler <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg></a>
+                    <div class="mega-menu" role="region" aria-label="Hizmet kategorileri">
+                        <div class="mega-inner">
+                            <div class="mega-grid">
+                                <a href="sac-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Lazer Kesim</strong><span class="mega-card-desc">Sac metal gruplarında hassas kesim</span></a>
+                                <a href="boru-profil-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Boru / Profil Lazer Kesim</strong><span class="mega-card-desc">Boru ve profil gruplarında teknik kesim</span></a>
+                                <a href="sac-bukum.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Büküm</strong><span class="mega-card-desc">Ölçüye göre form ve açı çalışmaları</span></a>
+                                <a href="kaynakli-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Kaynaklı İmalat</strong><span class="mega-card-desc">Kaynak ve montaj süreçleri</span></a>
+                                <a href="paslanmaz-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Paslanmaz İmalat</strong><span class="mega-card-desc">Paslanmaz çelik üretim desteği</span></a>
+                                <a href="aluminyum-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Alüminyum İmalat</strong><span class="mega-card-desc">Hafif yapı ve özel parça üretimi</span></a>
+                                <a href="metal-isleme.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Metal İşleme</strong><span class="mega-card-desc">Delme, form ve yüzey hazırlama</span></a>
+                                <a href="ozel-proje-imalati.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Özel Proje İmalatı</strong><span class="mega-card-desc">Proje bazlı özel üretim</span></a>
+                            </div>
+                            <div class="mega-footer">
+                                <a href="hizmetler.html" class="mega-footer-link">Tüm Hizmetleri İncele <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="projeler.html" class="nav-link">Projeler</a></li>
                 <li><a href="sektorler.html" class="nav-link">Sektörler</a></li>
                 <li><a href="iletisim.html" class="nav-link" aria-current="page">İletişim</a></li>
@@ -346,7 +365,24 @@
 <nav class="mobile-menu" aria-label="Mobil menü">
     <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
     <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
-    <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+    <div class="mobile-nav-group">
+        <div class="mobile-nav-row">
+            <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+            <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Hizmetler alt menüsünü aç">
+                <span class="mobile-submenu-arrow">⌄</span>
+            </button>
+        </div>
+        <div class="mobile-submenu" id="mobile-services-submenu" hidden>
+            <a href="sac-lazer-kesim.html">Sac Lazer Kesim</a>
+            <a href="boru-profil-lazer-kesim.html">Boru / Profil Lazer Kesim</a>
+            <a href="sac-bukum.html">Sac Büküm</a>
+            <a href="kaynakli-imalat.html">Kaynaklı İmalat</a>
+            <a href="paslanmaz-imalat.html">Paslanmaz İmalat</a>
+            <a href="aluminyum-imalat.html">Alüminyum İmalat</a>
+            <a href="metal-isleme.html">Metal İşleme</a>
+            <a href="ozel-proje-imalati.html">Özel Proje İmalatı</a>
+        </div>
+    </div>
     <a href="projeler.html" class="mobile-nav-link">Projeler</a>
     <a href="sektorler.html" class="mobile-nav-link">Sektörler</a>
     <a href="iletisim.html" class="mobile-nav-link" aria-current="page">İletişim</a>
@@ -679,7 +715,7 @@
     </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=8"></script>
 <script>
     // Contact form handler
     document.getElementById('contact-form').addEventListener('submit', function(e) {

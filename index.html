@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=5">
-    <link rel="stylesheet" href="css/responsive.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=9">
+    <link rel="stylesheet" href="css/responsive.css?v=7">
 </head>
 <body>
 
@@ -32,7 +32,26 @@
             <ul class="nav-list" role="list">
                 <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
                 <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
-                <li><a href="hizmetler.html" class="nav-link">Hizmetler</a></li>
+                <li class="nav-item nav-item--mega">
+                    <a href="hizmetler.html" class="nav-link">Hizmetler <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg></a>
+                    <div class="mega-menu" role="region" aria-label="Hizmet kategorileri">
+                        <div class="mega-inner">
+                            <div class="mega-grid">
+                                <a href="sac-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Lazer Kesim</strong><span class="mega-card-desc">Sac metal gruplarında hassas kesim</span></a>
+                                <a href="boru-profil-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Boru / Profil Lazer Kesim</strong><span class="mega-card-desc">Boru ve profil gruplarında teknik kesim</span></a>
+                                <a href="sac-bukum.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Büküm</strong><span class="mega-card-desc">Ölçüye göre form ve açı çalışmaları</span></a>
+                                <a href="kaynakli-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Kaynaklı İmalat</strong><span class="mega-card-desc">Kaynak ve montaj süreçleri</span></a>
+                                <a href="paslanmaz-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Paslanmaz İmalat</strong><span class="mega-card-desc">Paslanmaz çelik üretim desteği</span></a>
+                                <a href="aluminyum-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Alüminyum İmalat</strong><span class="mega-card-desc">Hafif yapı ve özel parça üretimi</span></a>
+                                <a href="metal-isleme.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Metal İşleme</strong><span class="mega-card-desc">Delme, form ve yüzey hazırlama</span></a>
+                                <a href="ozel-proje-imalati.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Özel Proje İmalatı</strong><span class="mega-card-desc">Proje bazlı özel üretim</span></a>
+                            </div>
+                            <div class="mega-footer">
+                                <a href="hizmetler.html" class="mega-footer-link">Tüm Hizmetleri İncele <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="projeler.html" class="nav-link">Projeler</a></li>
                 <li><a href="sektorler.html" class="nav-link">Sektörler</a></li>
                 <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
@@ -52,7 +71,24 @@
 <nav class="mobile-menu" aria-label="Mobil menü">
     <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
     <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
-    <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+    <div class="mobile-nav-group">
+        <div class="mobile-nav-row">
+            <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+            <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Hizmetler alt menüsünü aç">
+                <span class="mobile-submenu-arrow">⌄</span>
+            </button>
+        </div>
+        <div class="mobile-submenu" id="mobile-services-submenu" hidden>
+            <a href="sac-lazer-kesim.html">Sac Lazer Kesim</a>
+            <a href="boru-profil-lazer-kesim.html">Boru / Profil Lazer Kesim</a>
+            <a href="sac-bukum.html">Sac Büküm</a>
+            <a href="kaynakli-imalat.html">Kaynaklı İmalat</a>
+            <a href="paslanmaz-imalat.html">Paslanmaz İmalat</a>
+            <a href="aluminyum-imalat.html">Alüminyum İmalat</a>
+            <a href="metal-isleme.html">Metal İşleme</a>
+            <a href="ozel-proje-imalati.html">Özel Proje İmalatı</a>
+        </div>
+    </div>
     <a href="projeler.html" class="mobile-nav-link">Projeler</a>
     <a href="sektorler.html" class="mobile-nav-link">Sektörler</a>
     <a href="iletisim.html" class="mobile-nav-link">İletişim</a>
@@ -78,6 +114,10 @@
                     <source src="assets/videos/hero-welding-2.mp4" type="video/mp4">
                 </video>
                 <div class="hero-bg-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg,#04102e 0%,#071850 55%,#050e2e 100%);"></div>
+                <div class="hero-bg-overlay" style="background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.55) 100%);"></div>
             </div>
         </div>
 
@@ -124,6 +164,26 @@
                     </div>
                 </div>
 
+                <!-- Slide 3 -->
+                <div class="hero-slide-content">
+                    <div class="hero-badge" aria-label="Hizmet alanı">
+                        <span class="hero-badge-dot" aria-hidden="true"></span>
+                        MODÜLER TESİSAT SİSTEMLERİ
+                    </div>
+                    <h1 class="hero-title">
+                        Modüler Tesisat ve Arıtma Sistemlerinde<br>
+                        <span style="color: var(--color-yellow);">Güvenilir Üretim Desteği</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Paslanmaz, karbon çelik ve çift cidarlı tesisat gruplarında; arıtma, proses ve endüstriyel sistem
+                        ihtiyaçlarına yönelik teknik üretim çözümleri sunuyoruz.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
+                        <a href="moduler-tesisat-sistemleri.html" class="btn btn-outline-white">Hizmetleri İncele</a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -141,6 +201,7 @@
         <div class="hero-dots" role="tablist" aria-label="Slide seçimi">
             <button class="hero-dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Video 1"></button>
             <button class="hero-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Video 2"></button>
+            <button class="hero-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Video 3"></button>
         </div>
 
     </section>
@@ -225,7 +286,7 @@
 
             <div class="services-grid">
 
-                <article class="service-card reveal reveal-d1">
+                <a class="service-card reveal reveal-d1" href="sac-lazer-kesim.html">
                     <div class="service-card-num">01</div>
                     <h3 class="service-card-title">Sac Lazer Kesim</h3>
                     <p class="service-card-desc">Teknik çizime göre sac parçaların hassas ölçülerde kesilmesi ve üretim sürecine hazır hale getirilmesi.</p>
@@ -234,9 +295,9 @@
                         <span class="stag">Çelik</span>
                         <span class="stag">Paslanmaz</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d2">
+                <a class="service-card reveal reveal-d2" href="boru-profil-lazer-kesim.html">
                     <div class="service-card-num">02</div>
                     <h3 class="service-card-title">Boru / Profil Lazer Kesim</h3>
                     <p class="service-card-desc">Boru ve profil gruplarında ölçülü kesim, delik, kanal ve form uygulamaları için teknik üretim desteği.</p>
@@ -245,9 +306,9 @@
                         <span class="stag">Profil</span>
                         <span class="stag">3 kW</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d3">
+                <a class="service-card reveal reveal-d3" href="sac-bukum.html">
                     <div class="service-card-num">03</div>
                     <h3 class="service-card-title">Sac Büküm</h3>
                     <p class="service-card-desc">Teknik ölçülere göre sac malzemelerin büküm işlemleri; proje ihtiyacına uygun form ve açı çalışmaları.</p>
@@ -255,9 +316,9 @@
                         <span class="stag">Büküm</span>
                         <span class="stag">Form</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d4">
+                <a class="service-card reveal reveal-d4" href="kaynakli-imalat.html">
                     <div class="service-card-num">04</div>
                     <h3 class="service-card-title">Kaynaklı İmalat</h3>
                     <p class="service-card-desc">Paslanmaz, çelik ve alüminyum gruplarında proje ihtiyacına göre kaynaklı üretim ve montaj süreçleri.</p>
@@ -265,9 +326,9 @@
                         <span class="stag">Kaynak</span>
                         <span class="stag">Montaj</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d1">
+                <a class="service-card reveal reveal-d1" href="paslanmaz-imalat.html">
                     <div class="service-card-num">05</div>
                     <h3 class="service-card-title">Paslanmaz İmalat</h3>
                     <p class="service-card-desc">Paslanmaz çelik malzeme gruplarında kesim, büküm, kaynak ve özel imalat süreçlerinde teknik çözüm.</p>
@@ -276,9 +337,9 @@
                         <span class="stag">AISI 304</span>
                         <span class="stag">AISI 316</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d2">
+                <a class="service-card reveal reveal-d2" href="aluminyum-imalat.html">
                     <div class="service-card-num">06</div>
                     <h3 class="service-card-title">Alüminyum İmalat</h3>
                     <p class="service-card-desc">Alüminyum malzeme gruplarında kesim, büküm ve kaynaklı imalat; hafif ve dayanıklı yapılar için üretim desteği.</p>
@@ -286,9 +347,9 @@
                         <span class="stag">Alüminyum</span>
                         <span class="stag">Hafif Yapı</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d3">
+                <a class="service-card reveal reveal-d3" href="metal-isleme.html">
                     <div class="service-card-num">07</div>
                     <h3 class="service-card-title">Metal İşleme</h3>
                     <p class="service-card-desc">Farklı metal gruplarında kesim, delme, form verme ve yüzey hazırlama süreçlerine yönelik teknik işleme çözümleri.</p>
@@ -296,9 +357,9 @@
                         <span class="stag">İşleme</span>
                         <span class="stag">Çelik</span>
                     </div>
-                </article>
+                </a>
 
-                <article class="service-card reveal reveal-d4">
+                <a class="service-card reveal reveal-d4" href="ozel-proje-imalati.html">
                     <div class="service-card-num">08</div>
                     <h3 class="service-card-title">Özel Proje İmalatı</h3>
                     <p class="service-card-desc">Teknik çizime dayalı, proje bazlı özel parça ve konstrüksiyon üretimi. Malzeme ve yöntem projeye göre planlanır.</p>
@@ -306,7 +367,29 @@
                         <span class="stag">Özel Üretim</span>
                         <span class="stag">Proje</span>
                     </div>
-                </article>
+                </a>
+
+                <a class="service-card reveal reveal-d1" href="moduler-tesisat-sistemleri.html">
+                    <div class="service-card-num">09</div>
+                    <h3 class="service-card-title">Modüler Tesisat Sistemleri</h3>
+                    <p class="service-card-desc">Paslanmaz, karbon çelik ve çift cidarlı tesisat gruplarında teknik çizime uygun üretim ve montaja hazır parça desteği.</p>
+                    <div class="service-card-tags">
+                        <span class="stag">Tesisat</span>
+                        <span class="stag">Paslanmaz</span>
+                        <span class="stag">Karbon Çelik</span>
+                    </div>
+                </a>
+
+                <a class="service-card reveal reveal-d2" href="moduler-tesisat-sistemleri.html">
+                    <div class="service-card-num">10</div>
+                    <h3 class="service-card-title">Arıtma Sistemleri</h3>
+                    <p class="service-card-desc">Su, gaz, toz ve baca arıtma sistemleri için filtre, proses ve ekipman üretim desteği.</p>
+                    <div class="service-card-tags">
+                        <span class="stag">Arıtma</span>
+                        <span class="stag">Filtre</span>
+                        <span class="stag">Proses</span>
+                    </div>
+                </a>
 
             </div>
 
@@ -486,16 +569,25 @@
 
         <div class="ref-marquee" aria-hidden="true">
             <div class="ref-track">
+                <!-- Asıl grup: 9 logo -->
                 <div class="ref-card"><img src="assets/images/references/alarko_logo.svg" alt="Alarko" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/ankara_il_özel_idaresi.svg" alt="Ankara İl Özel İdaresi" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/bmt.svg" alt="BMT" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/bochu_logo.svg" alt="Bochu" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/cankay_belediyesi.svg" alt="Çankaya Belediyesi" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/geka_logo.svg" alt="GEKA" class="ref-logo"></div>
-                <div class="ref-card"><img src="assets/images/references/mke_logo.svg" alt="MKE" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/oncu_insaat.svg" alt="Öncü İnşaat" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/rototip.svg" alt="Rototip" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/wilo_logo.svg" alt="WILO" class="ref-logo"></div>
-                <!-- Seamless loop için kopya -->
+                <!-- Seamless loop için kopya (aria-hidden) -->
                 <div class="ref-card"><img src="assets/images/references/alarko_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/ankara_il_özel_idaresi.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/bmt.svg" alt="" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/bochu_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/cankay_belediyesi.svg" alt="" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/geka_logo.svg" alt="" class="ref-logo"></div>
-                <div class="ref-card"><img src="assets/images/references/mke_logo.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/oncu_insaat.svg" alt="" class="ref-logo"></div>
+                <div class="ref-card"><img src="assets/images/references/rototip.svg" alt="" class="ref-logo"></div>
                 <div class="ref-card"><img src="assets/images/references/wilo_logo.svg" alt="" class="ref-logo"></div>
             </div>
         </div>
@@ -575,6 +667,6 @@
     </div>
 </footer>
 
-<script src="js/main.js?v=7"></script>
+<script src="js/main.js?v=8"></script>
 </body>
 </html>

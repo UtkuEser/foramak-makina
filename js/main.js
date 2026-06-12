@@ -38,6 +38,14 @@
         mobileMenu.classList.remove('open');
         document.body.style.overflow = '';
         hamburger.setAttribute('aria-expanded', 'false');
+        /* Açık kalan alt menüleri kapat */
+        mobileMenu.querySelectorAll('.mobile-nav-group.is-open').forEach(function (group) {
+            group.classList.remove('is-open');
+            var t = group.querySelector('.mobile-submenu-toggle');
+            var s = group.querySelector('.mobile-submenu');
+            if (t) t.setAttribute('aria-expanded', 'false');
+            if (s) s.hidden = true;
+        });
     }
 
     if (hamburger && mobileMenu) {
@@ -49,7 +57,7 @@
             }
         });
 
-        mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function (link) {
+        mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta, .mobile-submenu a').forEach(function (link) {
             link.addEventListener('click', closeMenu);
         });
 
@@ -62,12 +70,31 @@
     /* === ACTIVE NAV LINK === */
     var pagePath = window.location.pathname.split('/').pop() || 'index.html';
 
+    var sectionMap = {
+        'sac-lazer-kesim.html':          'hizmetler.html',
+        'boru-profil-lazer-kesim.html':  'hizmetler.html',
+        'sac-bukum.html':                'hizmetler.html',
+        'kaynakli-imalat.html':          'hizmetler.html',
+        'paslanmaz-imalat.html':         'hizmetler.html',
+        'aluminyum-imalat.html':         'hizmetler.html',
+        'metal-isleme.html':             'hizmetler.html',
+        'ozel-proje-imalati.html':       'hizmetler.html',
+        'moduler-tesisat-sistemleri.html': 'hizmetler.html',
+    };
+    var effectivePath = sectionMap[pagePath] || pagePath;
+
     document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
         var href = (link.getAttribute('href') || '').split('/').pop();
-        if (href === pagePath || (pagePath === '' && href === 'index.html')) {
+        if (href === pagePath || href === effectivePath || (pagePath === '' && href === 'index.html')) {
             link.classList.add('active');
         }
     });
+
+    if (sectionMap[pagePath]) {
+        document.querySelectorAll('[data-section="hizmetler"]').forEach(function (el) {
+            el.classList.add('active');
+        });
+    }
 
 
     /* === SCROLL REVEAL === */
@@ -122,12 +149,61 @@
 
 
 /* ============================================================
+   MEGA MENU — Ekrandan taşma düzeltme + Escape kapat
+   ============================================================ */
+
+/* Mega menu viewport clamp: sağa veya sola taşmayı engelle */
+document.querySelectorAll('.nav-item--mega').forEach(function (item) {
+    var menu = item.querySelector('.mega-menu');
+    if (!menu) return;
+
+    item.addEventListener('mouseenter', function () {
+        /* Taşma kontrolünü bir sonraki frame'e bırak (display'dan sonra) */
+        requestAnimationFrame(function () {
+            var rect = menu.getBoundingClientRect();
+            var vw   = document.documentElement.clientWidth;
+            var shift = 0;
+
+            if (rect.right > vw - 8) {
+                shift = -(rect.right - vw + 8);
+            } else if (rect.left < 8) {
+                shift = 8 - rect.left;
+            }
+
+            if (shift !== 0) {
+                menu.style.marginLeft = shift + 'px';
+            } else {
+                menu.style.marginLeft = '';
+            }
+        });
+    });
+});
+
+
+/* ============================================================
    HERO SLIDER — standalone, DOMContentLoaded
    Selectors: .hero-slide | .hero-slide-content | .hero-dot
               .hero-arrow--prev | .hero-arrow--next
    Active class: is-active
    ============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
+
+    /* === MOBİL HİZMETLER ALT LİSTE === */
+    document.querySelectorAll('.mobile-submenu-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var group = toggle.closest('.mobile-nav-group');
+            if (!group) return;
+            var submenu = group.querySelector('.mobile-submenu');
+            if (!submenu) return;
+            var isOpen = group.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            submenu.hidden = !isOpen;
+        });
+    });
+
+    /* === HERO SLIDER === */
     var slides   = document.querySelectorAll('.hero-slide');
     var contents = document.querySelectorAll('.hero-slide-content');
     var dots     = document.querySelectorAll('.hero-dot');

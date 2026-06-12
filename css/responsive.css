@@ -11,6 +11,9 @@
     .services-grid  { grid-template-columns: repeat(2, 1fr); }
     .sectors-grid   { grid-template-columns: repeat(3, 1fr); }
 
+    /* Mega menu dar ekranda küçül */
+    .mega-menu { width: 560px; }
+
     .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-xl); }
 
     .capacity-inner    { gap: var(--sp-xl); }
@@ -36,10 +39,20 @@
     .page-hero-inner  { grid-template-columns: 1fr; }
     .page-hero-module { display: none; }
 
+    /* Mega menu — desktop only */
+    .mega-menu { display: none !important; }
+
+    .service-scope-grid { grid-template-columns: 1fr; }
+
+    .material-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .sector-featured-grid { grid-template-columns: repeat(2, 1fr); }
+    .sector-card--featured { grid-column: span 2; }
+
     .capacity-inner { grid-template-columns: 1fr; }
 
     .about-grid { grid-template-columns: 1fr; }
-    .about-visual { height: 340px; }
+    .about-visual { height: 300px; }
 
     .contact-layout { grid-template-columns: 1fr; }
     .quote-layout   { grid-template-columns: 1fr; }
@@ -65,13 +78,28 @@
         --sp-3xl: 4rem;
     }
 
+    /* ---- Global overflow koruması ---- */
+    body { overflow-x: hidden; }
+
     /* Header */
     .nav-list,
     .nav-cta  { display: none; }
     .hamburger { display: flex; }
     .mobile-menu { display: flex; }
 
-    /* Hero */
+    /* ---- Section spacing ---- */
+    .section               { padding: 3rem 0; }
+    .section-title         { font-size: 1.55rem; line-height: 1.3; letter-spacing: -0.01em; }
+    .section-desc          { font-size: var(--fs-base); line-height: 1.7; }
+    .section-header        { margin-bottom: var(--sp-lg); }
+    .section-header--center { margin-bottom: var(--sp-lg); }
+
+    /* ---- Page hero (iç sayfa başlıkları) ---- */
+    .page-hero       { padding: calc(var(--header-height) + 2rem) 0 2.5rem; }
+    .page-hero-title { font-size: 1.65rem; line-height: 1.25; }
+    .page-hero-desc  { font-size: var(--fs-sm); line-height: 1.7; }
+
+    /* Hero (ana sayfa) */
     .hero         { height: auto; min-height: 720px; max-height: none; padding-bottom: 0; }
     .hero-bg-video { object-position: center 38%; }
 
@@ -132,76 +160,110 @@
             linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
     }
 
-    /* Section titles */
-    .section-title    { font-size: var(--fs-2xl); }
-    .page-hero-title  { font-size: 1.8rem; }
+    /* ---- Capabilities strip ---- */
+    .capabilities-strip { grid-template-columns: 1fr 1fr; }
+    .cap-item   { padding: 14px 12px; gap: 9px; }
+    .cap-icon   { width: 22px; height: 22px; }
+    .cap-label  { font-size: 0.72rem; }
+    .cap-sub    { font-size: 0.62rem; }
 
-    /* Quick quote — mobilde tek kolon */
+    /* ---- Service cards ---- */
+    .services-grid        { grid-template-columns: 1fr; }
+    .services-detail-grid { grid-template-columns: 1fr; }
+    .service-card         { padding: var(--sp-lg); }
+    .service-card-num     { font-size: 1.8rem; }
+    .service-card-title   { font-size: var(--fs-base); }
+
+    /* ---- Quick quote ---- */
     .quick-quote             { padding-top: 16px; }
-    .quick-quote-card        { grid-template-columns: 1fr; padding: var(--sp-lg) var(--sp-md); border-radius: 16px; gap: var(--sp-md); }
+    .quick-quote-card        { grid-template-columns: 1fr; padding: var(--sp-lg) 20px; border-radius: 14px; gap: var(--sp-md); }
     .quick-quote-formats     { align-items: flex-start; }
     .qqf-chips               { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+    .quick-quote-title       { font-size: var(--fs-lg); line-height: 1.3; }
+    .quick-quote-desc        { font-size: var(--fs-sm); max-width: 100%; }
     .quick-quote-actions     { flex-direction: column; }
     .quick-quote-actions .btn { width: 100%; }
 
-    /* References */
-    .ref-grid          { grid-template-columns: repeat(2, 1fr); }
-    .ref-card          { height: 96px; padding: 12px 16px; }
-    .ref-logo          { max-height: 44px; max-width: 130px; }
+    /* ---- About page ---- */
+    .about-visual    { height: 220px; }
+    .about-text h2   { font-size: 1.5rem; line-height: 1.3; }
+    .about-values    { grid-template-columns: 1fr; }
 
-    /* Capabilities strip */
-    .capabilities-strip { grid-template-columns: 1fr 1fr; }
+    /* ---- Hakkımızda — inline grid overrides ---- */
+    .anlayis-grid      { grid-template-columns: 1fr !important; }
+    .konum-grid        { grid-template-columns: 1fr !important; gap: var(--sp-xl) !important; }
+    .konum-visual-wrap { height: 220px !important; }
 
-    /* CTA steps */
-    .cta-steps { grid-template-columns: 1fr 1fr; }
+    /* ---- Hizmetler — materyal grid (4→2 kolon) ---- */
+    .materyal-grid-hz  { grid-template-columns: repeat(2, 1fr) !important; }
 
-    /* Sectors featured grid */
-    .sector-featured-grid { grid-template-columns: 1fr 1fr; }
-    .sector-block--featured { grid-column: span 2; }
-
-    /* Services */
-    .services-grid        { grid-template-columns: 1fr; }
-    .services-detail-grid { grid-template-columns: 1fr; }
-
-    /* Sectors */
-    .sectors-grid          { grid-template-columns: repeat(2, 1fr); }
+    /* ---- Sector blocks ---- */
     .sector-featured-grid  { grid-template-columns: 1fr; }
+    .sector-block--featured { grid-column: span 1; padding: var(--sp-lg); }
+    .sector-block--featured .sector-block-title { font-size: var(--fs-md); }
+    .sector-block-deco     { display: none; }
+    .sector-block-title    { font-size: var(--fs-md); line-height: 1.3; }
+    .sector-block-desc     { font-size: var(--fs-sm); }
+    .sector-spec           { font-size: 0.65rem; }
+    .sector-block--featured .sector-block-specs { gap: 6px; }
+
+    /* ---- References — marquee ---- */
+    .ref-card   { height: 84px; min-width: 150px; margin-right: 10px; padding: 12px 16px; }
+    .ref-logo   { max-height: 38px; max-width: 110px; }
+    /* Maskeyi kenarlara yakınlaştır — küçük ekranda kaybolma azalsın */
+    .ref-marquee {
+        -webkit-mask-image: linear-gradient(to right,
+            transparent 0%, black 3%, black 97%, transparent 100%);
+        mask-image: linear-gradient(to right,
+            transparent 0%, black 3%, black 97%, transparent 100%);
+    }
+
+    /* ---- References — static grid (hakkimizda) ---- */
+    .ref-grid              { grid-template-columns: repeat(2, 1fr); }
+    .ref-card.ref-card--static { height: 90px; }
+
+    /* ---- Sectors */
+    .sectors-grid          { grid-template-columns: repeat(2, 1fr); }
     .sector-block--featured { grid-column: span 1; }
     .sectors-page-grid { grid-template-columns: 1fr; }
 
-    /* Projects */
-    .projects-grid      { grid-template-columns: 1fr; }
-    .projects-page-grid { grid-template-columns: 1fr; }
-
-    /* Machine */
-    .machine-specs-grid { grid-template-columns: 1fr; }
-
-    /* Capacity table */
-    .capacity-table-wrap { overflow-x: auto; }
-    .capacity-table { min-width: 560px; }
-
-    /* Process */
-    .process-steps { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
-
-    /* CTA */
-    .cta-band-title   { font-size: var(--fs-2xl); }
+    /* ---- CTA band ---- */
+    .cta-band       { padding: 3rem 0; }
+    .cta-steps      { grid-template-columns: 1fr 1fr; }
+    .cta-step       { padding: 14px 12px; }
+    .cta-step-title { font-size: 0.8rem; }
+    .cta-step-sub   { font-size: 0.64rem; }
+    .cta-band-title   { font-size: 1.5rem; }
+    .cta-band-desc    { font-size: var(--fs-sm); }
     .cta-band-actions { flex-direction: column; align-items: center; }
     .cta-band-actions .btn { width: 100%; justify-content: center; }
 
-    /* Footer */
+    /* ---- Footer ---- */
     .footer-grid   { grid-template-columns: 1fr; gap: var(--sp-lg); }
-    .footer-desc   { max-width: 100%; }
+    .footer-desc   { max-width: 100%; font-size: var(--fs-sm); }
+    .footer-col-title { margin-bottom: var(--sp-sm); }
     .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
 
-    /* Form */
+    /* ---- Form ---- */
     .form-row { grid-template-columns: 1fr; }
     .form-card { padding: var(--sp-md); }
 
-    /* About */
-    .about-values { grid-template-columns: 1fr; }
-
-    /* Quote */
+    /* ---- Quote ---- */
     .quote-info-title { font-size: var(--fs-xl); }
+
+    /* ---- Projects ---- */
+    .projects-grid      { grid-template-columns: 1fr; }
+    .projects-page-grid { grid-template-columns: 1fr; }
+
+    /* ---- Machine ---- */
+    .machine-specs-grid { grid-template-columns: 1fr; }
+
+    /* ---- Capacity table ---- */
+    .capacity-table-wrap { overflow-x: auto; }
+    .capacity-table { min-width: 560px; }
+
+    /* ---- Process ---- */
+    .process-steps { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
 }
 
 
@@ -209,6 +271,11 @@
 @media (max-width: 480px) {
     :root { --container-padding: 1rem; }
 
+    /* ---- Section ---- */
+    .section       { padding: 2.5rem 0; }
+    .section-title { font-size: 1.35rem; }
+
+    /* ---- Hero ---- */
     .hero-title        { font-size: 1.85rem; }
     .hero-badge        { font-size: 0.65rem; }
     .hero-arrow        { width: 26px; height: 26px; bottom: 24px; }
@@ -216,15 +283,51 @@
     .hero-arrow--next  { left: calc(50% + 26px); }
     .hero-dot.is-active { width: 20px; }
 
-    .sectors-grid { grid-template-columns: 1fr; }
+    /* ---- Page hero ---- */
+    .page-hero-title { font-size: 1.45rem; }
 
-    .process-steps { grid-template-columns: 1fr; }
+    /* ---- Capabilities strip — tek sütun ---- */
+    .capabilities-strip { grid-template-columns: 1fr; }
+    .cap-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .cap-item:last-child { border-bottom: none; }
 
-    .mobile-nav-link { font-size: var(--fs-lg); }
+    /* ---- Quick quote ---- */
+    .quick-quote-card { padding: 20px 16px; }
 
+    /* ---- Service detail cards ---- */
     .service-detail-card { padding: var(--sp-lg); }
 
+    /* ---- Sectors ---- */
+    .sectors-grid { grid-template-columns: 1fr; }
+
+    /* ---- Sector featured grid ---- */
+    .sector-featured-grid  { grid-template-columns: 1fr; }
+    .sector-card--featured { grid-column: span 1; }
+
+    /* ---- CTA steps — tek sütun ---- */
+    .cta-steps { grid-template-columns: 1fr; }
+    .cta-step  { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .cta-step:last-child { border-bottom: none; }
+
+    /* ---- References ---- */
+    .ref-card { height: 76px; min-width: 130px; }
+    .ref-logo { max-height: 34px; max-width: 96px; }
+
+    /* ---- Material grid ---- */
+    .material-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* ---- Process ---- */
+    .process-steps { grid-template-columns: 1fr; }
+
+    /* ---- Contact ---- */
     .contact-info-block { padding: var(--sp-lg); }
 
+    /* ---- Footer ---- */
     .footer-grid { gap: var(--sp-md); }
+
+    /* ---- Mobile nav ---- */
+    .mobile-nav-link { font-size: var(--fs-lg); }
 }

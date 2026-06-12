@@ -70,7 +70,12 @@
 
 /* === RESET === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     font-family: var(--font-family);
     font-size: var(--fs-base);
@@ -80,6 +85,8 @@ body {
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 img, video { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -189,6 +196,19 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
     color: var(--color-navy);
 }
 
+.btn-outline-light,
+.btn-hero-secondary {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.06);
+}
+.btn-outline-light:hover,
+.btn-hero-secondary:hover {
+    color: var(--color-navy);
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
 .btn-ghost {
     padding: 0;
     background: none;
@@ -293,11 +313,223 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 
 
+/* ============================================================
+   MEGA MENU
+   Tasarım prensibi:
+   - .nav-item--mega → align-self:stretch ile tam header yüksekliğini doldurur
+   - top:100% bu yüzden header'ın kesin altına denk gelir
+   - padding-top şeffaf köprü görevi görür (hover gap olmaz)
+   ============================================================ */
+
+/* nav-item--mega: tam header yüksekliği + position context
+   height:var(--header-height) → top:100% = header'ın kesin altı */
+.nav-item--mega {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+/* Hizmetler link — chevron ile birlikte satır içi */
+.nav-item--mega > .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.nav-item--mega:hover .nav-chevron {
+    transform: rotate(180deg);
+}
+
+/* Mega menu wrapper
+   - position:absolute, top:100% = header'ın tam altı (70px'e denk gelir)
+   - padding-top: şeffaf köprü, hover gap'i kapatır
+   - opacity/visibility transition ile fade-in */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    width: 740px;
+    max-width: calc(100vw - 32px);
+    padding-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+    z-index: 9999;
+}
+
+.nav-item--mega:hover > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Koyu lacivert panel */
+.mega-inner {
+    background: rgba(5, 18, 70, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 32px 80px rgba(0, 0, 0, 0.38),
+        0 6px 20px rgba(0, 0, 0, 0.20);
+    padding: 20px 20px 14px;
+}
+
+/* 4 × 2 kart grid */
+.mega-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+/* Hizmet kartı */
+.mega-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.mega-card:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 226, 31, 0.30);
+}
+
+/* Sol sarı accent çizgisi — hover'da görünür */
+.mega-card-accent {
+    display: none;
+}
+
+.mega-card-title {
+    font-size: 0.79rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.3;
+}
+
+.mega-card-desc {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.46);
+    line-height: 1.4;
+}
+
+/* Footer — Tüm Hizmetler linki */
+.mega-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mega-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.69rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(255, 226, 31, 0.82);
+    text-decoration: none;
+    transition: color 0.15s, gap 0.15s;
+}
+
+.mega-footer-link:hover {
+    color: #FFE21F;
+    gap: 9px;
+}
+
+.mega-footer-link:hover { color: var(--color-yellow); gap: 9px; }
+
+
+/* === MOBİL HİZMETLER ALT LİSTE === */
+.mobile-nav-group {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-row .mobile-nav-link {
+    flex: 1;
+    border-bottom: 0;
+}
+
+.mobile-submenu-toggle {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.78);
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-submenu-arrow {
+    display: inline-block;
+    transition: transform 180ms ease;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.mobile-nav-group.is-open .mobile-submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    display: grid;
+    gap: 0;
+    padding: 4px 0 12px 18px;
+}
+
+.mobile-submenu[hidden] {
+    display: none !important;
+}
+
+.mobile-submenu a {
+    display: block;
+    padding: 9px 0;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-submenu a:hover {
+    color: var(--color-yellow);
+}
+
+
 /* === HEADER === */
 .header {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 1000;
     height: var(--header-height);
     background: transparent;
     border-bottom: 1px solid transparent;
@@ -454,7 +686,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
     top: var(--header-height);
     left: 0; right: 0; bottom: 0;
     background-color: var(--color-deep);
-    z-index: 99;
+    z-index: 999;
     padding: var(--sp-xl) var(--container-padding);
     flex-direction: column;
     overflow-y: auto;
@@ -779,6 +1011,9 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 
 /* Base service card */
 .service-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-left: 3px solid rgba(7,20,90,0.1);
@@ -1242,6 +1477,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 
 
+/* === PARTNER NAMES (metin tabanlı referans listesi) === */
 /* === PROJECTS SECTION === */
 .projects-grid {
     display: grid;
@@ -2683,8 +2919,8 @@ select.form-control {
 }
 
 @keyframes refMarquee {
-    from { transform: translateX(-50%); }
-    to   { transform: translateX(0); }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 /* --- Logo kartı (paylaşılan) --- */
@@ -2752,3 +2988,131 @@ select.form-control {
 .mb-sm { margin-bottom: var(--sp-sm); }
 .mb-md { margin-bottom: var(--sp-md); }
 .mb-lg { margin-bottom: var(--sp-lg); }
+
+
+/* === HİZMET DETAY SAYFASI — SERVICE SCOPE LAYOUT === */
+
+/* ph-sc-label — simple tag label in page-hero-module */
+.ph-sc-label {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: rgba(255,226,31,0.9);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Hero action buttons row */
+.page-hero-actions {
+    display: flex;
+    gap: var(--sp-sm);
+    flex-wrap: wrap;
+    margin-top: var(--sp-lg);
+}
+
+/* Two-column scope layout */
+.service-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--sp-2xl);
+    align-items: start;
+}
+
+.service-scope-main p {
+    color: var(--color-text-body);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--sp-md);
+}
+
+.service-scope-main p:last-of-type { margin-bottom: 0; }
+
+/* Spec sidebar blocks */
+.service-scope-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.spec-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: var(--color-white);
+    padding: 14px 18px;
+}
+
+.spec-label {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--fw-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.spec-value {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-navy);
+}
+
+/* 4-column material grid */
+.material-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-md);
+}
+
+.material-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: var(--sp-lg);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid rgba(7,20,90,0.08);
+    border-radius: var(--radius-md);
+    transition: border-top-color var(--tr-base), box-shadow var(--tr-base);
+}
+
+.material-cell:hover {
+    border-top-color: var(--color-yellow);
+    box-shadow: var(--shadow-sm);
+}
+
+.material-cell svg { color: var(--color-navy); opacity: 0.6; flex-shrink: 0; }
+
+.material-cell strong {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-dark);
+}
+
+.material-cell span {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    line-height: var(--lh-relaxed);
+}
+
+/* Sector card used as usage area card on service pages */
+.sector-card-num {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--color-yellow);
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    opacity: 0.85;
+}
+
+/* Featured card variant — takes up 2 columns */
+.sector-card--featured {
+    grid-column: span 2;
+    border-left: 3px solid var(--color-yellow);
+    background: var(--color-navy);
+}
+
+.sector-card--featured .sector-card-num { color: rgba(255,226,31,0.8); }
+.sector-card--featured .sector-card-title { color: var(--color-white); }
+.sector-card--featured .sector-card-desc { color: rgba(255,255,255,0.65); }
