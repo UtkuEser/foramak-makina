@@ -1,0 +1,410 @@
+/* ============================================================
+   FORAMAK MAKİNE MÜHENDİSLİK — responsive.css
+   ============================================================ */
+
+
+/* === 1200px — Büyük Tablet === */
+@media (max-width: 1200px) {
+    :root { --container-padding: 2rem; }
+
+    .trust-grid     { grid-template-columns: repeat(2, 1fr); }
+    .services-grid  { grid-template-columns: repeat(2, 1fr); }
+    .sectors-grid   { grid-template-columns: repeat(3, 1fr); }
+
+    /* Mega menu dar ekranda küçül */
+    .mega-menu { width: 560px; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-xl); }
+
+    .capacity-inner    { gap: var(--sp-xl); }
+    .quick-quote-card  { padding: 24px 28px; gap: var(--sp-lg); grid-template-columns: 1fr auto 1fr; }
+    .ref-grid          { grid-template-columns: repeat(3, 1fr); }
+    .ref-card          { height: 104px; min-width: 0; padding: 14px 18px; }
+    .ref-logo          { max-height: 50px; }
+
+    .hero-title { font-size: 2.6rem; }
+}
+
+
+/* === 960px — Tablet === */
+@media (max-width: 960px) {
+    .hero              { height: auto; min-height: 500px; max-height: none; align-items: center; padding-bottom: 80px; }
+    .hero-content      { position: relative; left: auto; top: auto; width: 100%; max-width: 100%; min-height: 320px; margin: 0; padding: var(--sp-xl) 0 var(--sp-lg); }
+    /* hero-slide-content: desktop absolute+opacity geçişleri tablet'te de çalışır */
+    .hero-desc         { max-width: 100%; }
+    .hero-arrow        { width: 36px; height: 36px; }
+    .hero-arrow--prev  { left: 18px; }
+    .hero-arrow--next  { right: 18px; }
+
+    .page-hero-inner  { grid-template-columns: 1fr; }
+    .page-hero-module { display: none; }
+
+    /* Mega menu — desktop only */
+    .mega-menu { display: none !important; }
+
+    .service-scope-grid { grid-template-columns: 1fr; }
+
+    .material-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .sector-featured-grid { grid-template-columns: repeat(2, 1fr); }
+    .sector-card--featured { grid-column: span 2; }
+
+    .capacity-inner { grid-template-columns: 1fr; }
+
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { height: 300px; }
+
+    .contact-layout { grid-template-columns: 1fr; }
+    .quote-layout   { grid-template-columns: 1fr; }
+
+    .services-detail-grid { grid-template-columns: 1fr; }
+
+    .machine-specs-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .process-steps { grid-template-columns: repeat(3, 1fr); }
+    .process-connector { display: none; }
+
+    .projects-grid      { grid-template-columns: repeat(2, 1fr); }
+    .projects-page-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .sectors-page-grid { grid-template-columns: 1fr; }
+}
+
+
+/* === 768px — Mobil === */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1.25rem;
+        --sp-3xl: 4rem;
+        --header-height: 72px;
+    }
+
+    /* ---- Global overflow koruması ---- */
+    html, body { overflow-x: hidden; }
+    img, video  { max-width: 100%; }
+
+    /* ---- Header — mobil ---- */
+    .header       { height: 72px; }
+    .header-inner { height: 72px; padding-left: 22px; padding-right: 22px; }
+
+    /* Nav */
+    .nav-list,
+    .nav-cta  { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+
+    /* Logo — mobil */
+    .logo-img { height: 48px !important; max-width: 215px; }
+
+    /* ---- Section spacing ---- */
+    .section               { padding: 4rem 0; }
+    .section-title         { font-size: clamp(1.65rem, 7vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+    .section-desc          { font-size: var(--fs-base); line-height: 1.7; }
+    .section-header        { margin-bottom: var(--sp-lg); }
+    .section-header--center { margin-bottom: var(--sp-lg); }
+
+    /* ---- Page hero (iç sayfa başlıkları) ---- */
+    .page-hero       { padding: calc(var(--header-height) + 2rem) 0 2.5rem; }
+    .page-hero-title { font-size: 1.65rem; line-height: 1.25; }
+    .page-hero-desc  { font-size: var(--fs-sm); line-height: 1.7; }
+
+    /* Hero (ana sayfa) */
+    .hero         { height: auto; min-height: 100svh; max-height: none; padding-bottom: 0; }
+    .hero-bg-video { object-position: center center; }
+
+    /* hero-welding.mp4 — kaynak/kesim noktası sağda görünsün */
+    .hero-slide--welding .hero-bg-video { object-position: 68% center; }
+
+    /* hero-content: header altından dots üstüne kadar uzanır — flex sütun */
+    .hero-content {
+        position: absolute;
+        left: 0; right: 0;
+        top: 96px; bottom: 88px;
+        width: 100%; max-width: none;
+        min-height: 0; margin: 0;
+        padding: 0 22px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* slide-content: akışta (relative), sadece aktif gösterilir, fade-in ile açılır */
+    .hero-slide-content {
+        position: relative;
+        top: auto; left: auto; right: auto;
+        opacity: 0;
+        transform: none;
+        transition: none;
+        pointer-events: none;
+        display: none;
+    }
+    .hero-slide-content.is-active {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        opacity: 1;
+        pointer-events: auto;
+        animation: heroFadeIn 300ms ease forwards;
+    }
+
+    @keyframes heroFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* Başlık ve açıklama */
+    .hero-title   { font-size: clamp(1.875rem, 8.5vw, 2.6rem); line-height: 1.05; letter-spacing: -0.035em; }
+    .hero-desc    { font-size: 0.9375rem; max-width: 92%; line-height: 1.65; }
+    .hero-actions { flex-direction: column; gap: 12px; margin-top: auto; }
+    .hero-actions .btn { width: 100%; justify-content: center; min-height: 50px; font-size: 0.875rem; }
+
+    /* Oklar: dotlarla aynı hizada, alt merkezde */
+    .hero-arrow   { top: auto; transform: none; bottom: 23px; width: 32px; height: 32px; opacity: 0.8; }
+    .hero-arrow--prev { left: calc(50% - 59px); right: auto; }
+    .hero-arrow--next { left: calc(50% + 29px); right: auto; }
+    /* Dotlar */
+    .hero-dots    { bottom: 34px; }
+
+    /* Overlay: dengeli — görseli korur, metni okutabilir */
+    .hero-bg-overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(7, 20, 74, 0.22) 0%,
+                rgba(7, 20, 74, 0.56) 48%,
+                rgba(3, 8, 25, 0.82) 100%
+            ),
+            linear-gradient(90deg,
+                rgba(3, 8, 25, 0.65) 0%,
+                rgba(3, 8, 25, 0.35) 52%,
+                rgba(3, 8, 25, 0.08) 100%
+            );
+    }
+
+    /* ---- WhatsApp float ---- */
+    .whatsapp-float { width: 52px; height: 52px; right: 18px; bottom: 18px; }
+
+    /* ---- Capabilities strip ---- */
+    .capabilities-strip { grid-template-columns: 1fr 1fr; }
+    .cap-item   { padding: 14px 12px; gap: 9px; }
+    .cap-icon   { width: 22px; height: 22px; }
+    .cap-label  { font-size: 0.72rem; }
+    .cap-sub    { font-size: 0.62rem; }
+
+    /* ---- Service cards ---- */
+    .services-grid        { grid-template-columns: 1fr; }
+    .services-detail-grid { grid-template-columns: 1fr; }
+    .service-card         { padding: var(--sp-lg); }
+    .service-card-num     { font-size: 1.8rem; }
+    .service-card-title   { font-size: var(--fs-base); }
+
+    /* ---- Quick quote ---- */
+    .quick-quote             { padding-top: 16px; }
+    .quick-quote-card        { grid-template-columns: 1fr; padding: var(--sp-lg) 20px; border-radius: 14px; gap: var(--sp-md); }
+    .quick-quote-formats     { align-items: flex-start; }
+    .qqf-chips               { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+    .quick-quote-title       { font-size: var(--fs-lg); line-height: 1.3; }
+    .quick-quote-desc        { font-size: var(--fs-sm); max-width: 100%; }
+    .quick-quote-actions     { flex-direction: column; }
+    .quick-quote-actions .btn { width: 100%; }
+
+    /* ---- About page ---- */
+    .about-visual    { height: 220px; }
+    .about-text h2   { font-size: 1.5rem; line-height: 1.3; }
+    .about-values    { grid-template-columns: 1fr; }
+
+    /* ---- Hakkımızda — inline grid overrides ---- */
+    .anlayis-grid      { grid-template-columns: 1fr !important; }
+    .konum-grid        { grid-template-columns: 1fr !important; gap: var(--sp-xl) !important; }
+    .konum-visual-wrap { height: 220px !important; }
+
+    /* ---- Hizmetler — materyal grid (4→2 kolon) ---- */
+    .materyal-grid-hz  { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* ---- Sector blocks ---- */
+    .sector-featured-grid  { grid-template-columns: 1fr; }
+    .sector-block--featured { grid-column: span 1; padding: var(--sp-lg); }
+    .sector-block--featured .sector-block-title { font-size: var(--fs-md); }
+    .sector-block-deco     { display: none; }
+    .sector-block-title    { font-size: var(--fs-md); line-height: 1.3; }
+    .sector-block-desc     { font-size: var(--fs-sm); }
+    .sector-spec           { font-size: 0.65rem; }
+    .sector-block--featured .sector-block-specs { gap: 6px; }
+
+    /* ---- References — marquee ---- */
+    .ref-card   { height: 84px; min-width: 150px; margin-right: 10px; padding: 12px 16px; }
+    .ref-logo   { max-height: 38px; max-width: 110px; }
+    /* Maskeyi kenarlara yakınlaştır — küçük ekranda kaybolma azalsın */
+    .ref-marquee {
+        -webkit-mask-image: linear-gradient(to right,
+            transparent 0%, black 3%, black 97%, transparent 100%);
+        mask-image: linear-gradient(to right,
+            transparent 0%, black 3%, black 97%, transparent 100%);
+    }
+
+    /* ---- References — static grid (hakkimizda) ---- */
+    .ref-grid              { grid-template-columns: repeat(2, 1fr); }
+    .ref-card.ref-card--static { height: 90px; }
+
+    /* ---- Sectors */
+    .sectors-grid          { grid-template-columns: repeat(2, 1fr); }
+    .sector-block--featured { grid-column: span 1; }
+    .sectors-page-grid { grid-template-columns: 1fr; }
+
+    /* ---- CTA band ---- */
+    .cta-band       { padding: 3rem 0; }
+    .cta-steps      { grid-template-columns: 1fr 1fr; }
+    .cta-step       { padding: 14px 12px; }
+    .cta-step-title { font-size: 0.8rem; }
+    .cta-step-sub   { font-size: 0.64rem; }
+    .cta-band-title   { font-size: 1.5rem; }
+    .cta-band-desc    { font-size: var(--fs-sm); }
+    .cta-band-actions { flex-direction: column; align-items: center; }
+    .cta-band-actions .btn { width: 100%; justify-content: center; }
+
+    /* ---- Footer ---- */
+    .footer-grid   { grid-template-columns: 1fr; gap: var(--sp-lg); }
+    .footer-desc   { max-width: 100%; font-size: var(--fs-sm); }
+    .footer-col-title { margin-bottom: var(--sp-sm); }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+
+    /* ---- Form ---- */
+    .form-row { grid-template-columns: 1fr; }
+    .form-card { padding: var(--sp-md); }
+
+    /* ---- Quote ---- */
+    .quote-info-title { font-size: var(--fs-xl); }
+
+    /* ---- Projects ---- */
+    .projects-grid      { grid-template-columns: 1fr; }
+    .projects-page-grid { grid-template-columns: 1fr; }
+
+    /* ---- Machine ---- */
+    .machine-specs-grid { grid-template-columns: 1fr; }
+
+    /* ---- Capacity table ---- */
+    .capacity-table-wrap { overflow-x: auto; }
+    .capacity-table { min-width: 560px; }
+
+    /* ---- Process ---- */
+    .process-steps { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+}
+
+
+/* === 480px — Küçük Mobil === */
+@media (max-width: 480px) {
+    :root { --container-padding: 1rem; }
+
+    /* ---- Hakkımızda Sektör grid ---- */
+    .sektor-grid-hakkimizda { grid-template-columns: 1fr; }
+
+    /* ---- Section ---- */
+    .section       { padding: 2.5rem 0; }
+    .section-title { font-size: 1.4rem; }
+
+    /* ---- Hero ---- */
+    .hero              { min-height: 95svh; }
+    .hero-title        { font-size: clamp(1.75rem, 8vw, 2rem); }
+    .hero-badge        { font-size: 0.65rem; }
+    .hero-arrow        { width: 26px; height: 26px; bottom: 24px; }
+    .hero-arrow--prev  { left: calc(50% - 52px); }
+    .hero-arrow--next  { left: calc(50% + 26px); }
+    .hero-dot.is-active { width: 20px; }
+
+    /* ---- Page hero ---- */
+    .page-hero-title { font-size: 1.45rem; }
+
+    /* ---- Capabilities strip — tek sütun ---- */
+    .capabilities-strip { grid-template-columns: 1fr; }
+    .cap-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .cap-item:last-child { border-bottom: none; }
+
+    /* ---- Quick quote ---- */
+    .quick-quote-card { padding: 20px 16px; }
+
+    /* ---- Service detail cards ---- */
+    .service-detail-card { padding: var(--sp-lg); }
+
+    /* ---- Kart border-radius ---- */
+    .project-card          { border-radius: 14px; }
+    .service-card          { border-radius: 14px; }
+    .service-detail-card   { border-radius: 14px; }
+
+    /* ---- Projects grid — küçük mobilde tek kolon ---- */
+    .projects-grid      { grid-template-columns: 1fr; gap: 16px; }
+    .projects-page-grid { grid-template-columns: 1fr; }
+
+    /* ---- Sectors ---- */
+    .sectors-grid { grid-template-columns: 1fr; }
+
+    /* ---- Sector featured grid ---- */
+    .sector-featured-grid  { grid-template-columns: 1fr; }
+    .sector-card--featured { grid-column: span 1; }
+
+    /* ---- CTA steps — tek sütun ---- */
+    .cta-steps { grid-template-columns: 1fr; }
+    .cta-step  { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .cta-step:last-child { border-bottom: none; }
+
+    /* ---- References ---- */
+    .ref-card { height: 76px; min-width: 130px; }
+    .ref-logo { max-height: 34px; max-width: 96px; }
+
+    /* ---- Material grid ---- */
+    .material-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* ---- Process ---- */
+    .process-steps { grid-template-columns: 1fr; }
+
+    /* ---- Contact ---- */
+    .contact-info-block { padding: var(--sp-lg); }
+
+    /* ---- Footer ---- */
+    .footer-grid { gap: var(--sp-md); }
+
+    /* ---- Mobile nav ---- */
+    .mobile-nav-link { font-size: var(--fs-lg); }
+
+    /* ---- WhatsApp float ---- */
+    .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+        width: 52px;
+        height: 52px;
+    }
+
+    /* ---- Hakkımızda Sektör grid ---- */
+    .sektor-grid-hakkimizda { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* === Hizmetler sayfası 3-kolonlu grid — responsive breakpoints === */
+@media (max-width: 1100px) {
+    .services-detail-grid--3col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .services-detail-grid--3col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Hero okları 640px altında gizle — dotlar yeterli */
+    .hero-arrow { display: none; }
+
+    /* Hizmetler 3-kol 640px altında tek kolon */
+    .services-detail-grid--3col { grid-template-columns: 1fr; }
+}
+
+
+/* === 390px — Çok Küçük Telefon === */
+@media (max-width: 390px) {
+    .hero-title   { font-size: 1.875rem; line-height: 1.08; }
+    .hero-desc    { font-size: 0.875rem; }
+    .hero-content { padding: 0 18px; }
+    .hero-actions .btn { min-height: 46px; font-size: 0.8125rem; }
+}
