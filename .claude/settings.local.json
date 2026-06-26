@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -command \"Get-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -TotalCount 3\")",
+      "PowerShell(\\(Get-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Raw\\) -replace 'viewBox=\"0 0 450 225\"', 'viewBox=\"0 50 450 140\"' | Set-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Encoding UTF8 -NoNewline)",
+      "PowerShell(\\(Get-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Raw\\).Substring\\(0, 200\\))",
+      "PowerShell(\\(Get-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Raw\\).Substring\\(0, 500\\))",
+      "PowerShell(\\(Get-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Raw\\) -replace 'viewBox=\"0 0 450 225\"', 'viewBox=\"0 65 450 95\"' | Set-Content 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\foramak_makina_logo.svg' -Encoding UTF8 -NoNewline)",
+      "PowerShell(Get-ChildItem 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\images\\\\hizmetlerimiz\\\\' | ForEach-Object { \"[$\\($_.Name\\)]\" })",
+      "PowerShell(Get-ChildItem 'C:\\\\Users\\\\Utku\\\\Desktop\\\\web\\\\foramak-makina-main\\\\assets\\\\videos\\\\' | ForEach-Object { \"[$\\($_.Name\\)] - $\\([math]::Round\\($_.Length/1MB, 1\\)\\) MB\" })"
+    ]
+  }
+}
