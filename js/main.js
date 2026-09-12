@@ -68,25 +68,34 @@
 
 
     /* === ACTIVE NAV LINK === */
-    var pagePath = window.location.pathname.split('/').pop() || 'index.html';
+    /* Clean URL desteği: hem uzantısız (/hizmetler) hem de eski (/hizmetler.html)
+       biçimleri normalize ederek karşılaştırır. */
+    function normalizePath(p) {
+        p = (p || '').split('?')[0].split('#')[0];
+        p = p.replace(/\.html$/, '');
+        p = p.replace(/\/+$/, '');
+        return p === '' ? '/' : p;
+    }
+
+    var pagePath = normalizePath(window.location.pathname);
 
     var sectionMap = {
-        'sac-lazer-kesim.html':          'hizmetler.html',
-        'boru-profil-lazer-kesim.html':  'hizmetler.html',
-        'sac-bukum.html':                'hizmetler.html',
-        'kaynakli-imalat.html':          'hizmetler.html',
-        'paslanmaz-imalat.html':         'hizmetler.html',
-        'aluminyum-imalat.html':         'hizmetler.html',
-        'metal-isleme.html':             'hizmetler.html',
-        'ozel-proje-imalati.html':       'hizmetler.html',
-        'moduler-tesisat-sistemleri.html': 'hizmetler.html',
-        'aritma-sistemleri.html':          'hizmetler.html',
+        '/sac-lazer-kesim':             '/hizmetler',
+        '/boru-profil-lazer-kesim':     '/hizmetler',
+        '/sac-bukum':                   '/hizmetler',
+        '/kaynakli-imalat':             '/hizmetler',
+        '/paslanmaz-imalat':            '/hizmetler',
+        '/aluminyum-imalat':            '/hizmetler',
+        '/metal-isleme':                '/hizmetler',
+        '/ozel-proje-imalati':          '/hizmetler',
+        '/moduler-tesisat-sistemleri':  '/hizmetler',
+        '/aritma-sistemleri':           '/hizmetler',
     };
     var effectivePath = sectionMap[pagePath] || pagePath;
 
     document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
-        var href = (link.getAttribute('href') || '').split('/').pop();
-        if (href === pagePath || href === effectivePath || (pagePath === '' && href === 'index.html')) {
+        var href = normalizePath(link.getAttribute('href'));
+        if (href === pagePath || href === effectivePath) {
             link.classList.add('active');
         }
     });

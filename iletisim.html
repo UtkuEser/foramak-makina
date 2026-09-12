@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=12">
-    <link rel="stylesheet" href="css/responsive.css?v=9">
+    <link rel="stylesheet" href="css/style.css?v=25">
+    <link rel="stylesheet" href="css/responsive.css?v=17">
     <style>
         /* ===== CONTACT PAGE SPECIFIC ===== */
         .contact-layout {
@@ -31,25 +31,25 @@
             gap: 40px;
         }
         .contact-info-title {
-            font-size: var(--fs-2xl);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
             font-weight: 700;
             color: #fff;
-            line-height: 1.25;
+            line-height: 1.2;
             margin: 0;
         }
         .contact-info-title span {
             color: var(--color-yellow);
         }
         .contact-info-subtitle {
-            font-size: var(--fs-sm);
+            font-size: var(--fs-md);
             color: var(--color-metal);
-            margin: 8px 0 0;
-            line-height: 1.6;
+            margin: 10px 0 0;
+            line-height: 1.75;
         }
         .contact-items {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 28px;
         }
         .contact-item {
             display: flex;
@@ -57,9 +57,9 @@
             gap: 16px;
         }
         .contact-item-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
             background: rgba(255,226,31,0.1);
             border: 1px solid rgba(255,226,31,0.2);
             display: flex;
@@ -68,21 +68,23 @@
             flex-shrink: 0;
         }
         .contact-item-icon svg {
+            width: 20px;
+            height: 20px;
             color: var(--color-yellow);
             stroke: var(--color-yellow);
         }
         .contact-item-body {}
         .contact-item-label {
-            font-size: 11px;
+            font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--color-metal);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .contact-item-value {
-            font-size: var(--fs-base);
-            font-weight: 500;
+            font-size: 1.2rem;
+            font-weight: 600;
             color: #fff;
             line-height: 1.5;
         }
@@ -102,10 +104,10 @@
             padding: 20px 24px;
         }
         .contact-hours-title {
-            font-size: var(--fs-sm);
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--color-yellow);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             text-transform: uppercase;
             letter-spacing: 0.06em;
         }
@@ -113,50 +115,50 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: var(--fs-sm);
+            font-size: var(--fs-base);
             color: var(--color-metal);
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .contact-hours-row:last-child {
             border-bottom: none;
         }
         .contact-hours-day {
-            font-weight: 500;
-            color: rgba(255,255,255,0.8);
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
         }
         .cap-badge-sm {
             display: inline-block;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--color-yellow);
             background: rgba(255,226,31,0.1);
             border: 1px solid rgba(255,226,31,0.25);
             border-radius: 4px;
-            padding: 1px 6px;
+            padding: 2px 7px;
             letter-spacing: 0.03em;
         }
 
         .contact-whatsapp {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: rgba(37,211,102,0.12);
             border: 1px solid rgba(37,211,102,0.25);
             border-radius: var(--radius-md);
-            padding: 14px 20px;
+            padding: 16px 22px;
             text-decoration: none;
             color: #fff;
-            font-size: var(--fs-sm);
-            font-weight: 500;
+            font-size: var(--fs-base);
+            font-weight: 600;
             transition: background 0.2s;
         }
         .contact-whatsapp:hover {
             background: rgba(37,211,102,0.2);
         }
         .contact-whatsapp-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             fill: #25D366;
             flex-shrink: 0;
         }
@@ -167,20 +169,21 @@
             padding: 56px 48px;
         }
         .contact-form-title {
-            font-size: var(--fs-xl);
+            font-size: clamp(1.5rem, 2.2vw, 1.875rem);
             font-weight: 700;
             color: var(--color-navy);
-            margin: 0 0 6px;
+            margin: 0 0 8px;
         }
         .contact-form-subtitle {
-            font-size: var(--fs-sm);
+            font-size: var(--fs-md);
             color: var(--color-text-muted);
             margin: 0 0 32px;
+            line-height: 1.6;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
         }
         .contact-form-row {
             display: grid;
@@ -190,16 +193,23 @@
         .contact-form-group {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
         }
         .contact-form-group label {
-            font-size: var(--fs-sm);
+            font-size: var(--fs-base);
             font-weight: 600;
             color: var(--color-navy);
         }
         .contact-form-group label span.req {
             color: var(--color-yellow-alt);
             margin-left: 2px;
+        }
+        .contact-form .form-control {
+            padding: 0.9rem 1rem;
+            font-size: var(--fs-base);
+        }
+        .contact-form .form-control::placeholder {
+            color: #6B7280;
         }
         .contact-form-success {
             display: none;
@@ -208,85 +218,49 @@
             border-radius: var(--radius-md);
             padding: 20px 24px;
             text-align: center;
-            font-size: var(--fs-sm);
+            font-size: var(--fs-base);
             color: var(--color-navy);
             font-weight: 500;
         }
 
-        /* --- Map section --- */
-        .map-section {
-            background: var(--color-deep);
-            padding: var(--section-py) 0;
+        /* --- Hero — sağ taraf bilgi kartları (İletişim'e özel büyütme) --- */
+        #iletisim-hero .breadcrumb { font-size: 0.8rem; gap: 10px; }
+        #iletisim-hero .page-hero-title { font-size: clamp(2.3rem, 4vw, 3.4rem); }
+        #iletisim-hero .page-hero-desc { font-size: var(--fs-lg); line-height: 1.8; max-width: 620px; }
+        #iletisim-hero .page-hero-module { gap: 14px; }
+
+        #iletisim-hero .ph-contact-grid { gap: 12px; }
+        #iletisim-hero .ph-contact-item { padding: 18px; gap: 14px; border-radius: var(--radius-md); }
+        #iletisim-hero .ph-contact-icon { width: 24px; height: 24px; opacity: 0.95; }
+        #iletisim-hero .ph-contact-label { font-size: 0.78rem; margin-bottom: 4px; }
+        #iletisim-hero .ph-contact-value { font-size: 1.05rem; font-weight: var(--fw-semibold); line-height: 1.3; }
+
+        #iletisim-hero .ph-contact-item--phone {
+            border-color: rgba(242,201,76,0.35);
+            background: rgba(242,201,76,0.08);
         }
-        .map-section-head {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .map-section-head h2 {
-            font-size: var(--fs-2xl);
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 8px;
-        }
-        .map-section-head p {
-            font-size: var(--fs-sm);
-            color: var(--color-metal);
-        }
-        .map-placeholder {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            height: 380px;
-            position: relative;
-        }
-        .map-pin-label {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            z-index: 2;
-        }
-        .map-pin-label svg {
-            filter: drop-shadow(0 4px 12px rgba(255,226,31,0.4));
-        }
-        .map-pin-text {
-            background: rgba(7,20,90,0.85);
-            border: 1px solid rgba(255,226,31,0.3);
-            border-radius: 8px;
-            padding: 10px 18px;
-            text-align: center;
-        }
-        .map-pin-text strong {
-            display: block;
-            font-size: var(--fs-sm);
-            font-weight: 700;
-            color: #fff;
-        }
-        .map-pin-text span {
-            font-size: 12px;
-            color: var(--color-metal);
-        }
-        .map-directions-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 24px;
-            font-size: var(--fs-sm);
-            font-weight: 600;
+        #iletisim-hero .ph-contact-item--phone .ph-contact-icon { color: var(--color-yellow); opacity: 1; }
+        #iletisim-hero .ph-contact-item--phone .ph-contact-value { font-size: 1.4rem; font-weight: var(--fw-bold); }
+        #iletisim-hero .ph-contact-item--phone .ph-contact-value a {
             color: var(--color-yellow);
             text-decoration: none;
-            border-bottom: 1px solid rgba(255,226,31,0.3);
-            padding-bottom: 2px;
-            transition: border-color 0.2s;
+            transition: color 0.2s;
         }
-        .map-directions-link:hover {
-            border-color: var(--color-yellow);
-        }
+        #iletisim-hero .ph-contact-item--phone .ph-contact-value a:hover { color: #fff; }
+
+        #iletisim-hero .ph-process-box { padding: var(--sp-lg); }
+        #iletisim-hero .ph-box-label { font-size: 0.85rem; margin-bottom: 14px; }
+        #iletisim-hero .ph-process-steps { gap: 10px; }
+        #iletisim-hero .ph-step { font-size: 0.92rem; padding: 8px 14px; border-radius: 4px; }
+        #iletisim-hero .ph-step-arrow { font-size: 0.92rem; color: rgba(242,201,76,0.75); }
 
         /* Responsive */
+        @media (max-width: 960px) {
+            /* Diğer sayfalarda page-hero-module 960px altında gizleniyor;
+               İletişim'de sağ kartlar mobilde de görünür ve alt alta kalmalı */
+            #iletisim-hero .page-hero-module { display: flex; }
+            #iletisim-hero .ph-contact-grid { grid-template-columns: 1fr; }
+        }
         @media (max-width: 900px) {
             .contact-layout {
                 grid-template-columns: 1fr;
@@ -301,11 +275,18 @@
                 grid-template-columns: 1fr;
             }
         }
+        @media (max-width: 768px) {
+            #iletisim-hero .page-hero-title { font-size: 1.9rem; line-height: 1.3; }
+            #iletisim-hero .page-hero-desc { font-size: var(--fs-base); line-height: 1.7; }
+        }
         @media (max-width: 480px) {
             .contact-info-panel,
             .contact-form-panel {
                 padding: 32px 20px;
             }
+            #iletisim-hero .page-hero-title { font-size: 1.7rem; }
+            #iletisim-hero .ph-contact-item { padding: 14px; }
+            #iletisim-hero .ph-contact-item--phone .ph-contact-value { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -314,39 +295,39 @@
 <!-- ===== HEADER ===== -->
 <header class="header" role="banner">
     <div class="container header-inner">
-        <a href="index.html" class="logo" aria-label="Foramak Makine Ana Sayfa">
+        <a href="/" class="logo" aria-label="Foramak Makine Ana Sayfa">
             <img src="assets/images/foramak_makina_logo.svg" alt="Foramak Makine Mühendislik" class="logo-img" height="62">
         </a>
         <nav class="nav" aria-label="Ana menü">
             <ul class="nav-list" role="list">
-                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+                <li><a href="/" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="/hakkimizda" class="nav-link">Hakkımızda</a></li>
                 <li class="nav-item nav-item--mega">
-                    <a href="hizmetler.html" class="nav-link">Hizmetler <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg></a>
+                    <a href="/hizmetler" class="nav-link">Hizmetler <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1,1 5,5 9,1"/></svg></a>
                     <div class="mega-menu" role="region" aria-label="Hizmet kategorileri">
                         <div class="mega-inner">
                             <div class="mega-grid">
-                                <a href="sac-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Lazer Kesim</strong><span class="mega-card-desc">Sac metal gruplarında hassas kesim</span></a>
-                                <a href="boru-profil-lazer-kesim.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Boru / Profil Lazer Kesim</strong><span class="mega-card-desc">Boru ve profil gruplarında teknik kesim</span></a>
-                                <a href="sac-bukum.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Büküm</strong><span class="mega-card-desc">Ölçüye göre form ve açı çalışmaları</span></a>
-                                <a href="kaynakli-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Kaynaklı İmalat</strong><span class="mega-card-desc">Kaynak ve montaj süreçleri</span></a>
-                                <a href="paslanmaz-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Paslanmaz İmalat</strong><span class="mega-card-desc">Paslanmaz çelik üretim desteği</span></a>
-                                <a href="aluminyum-imalat.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Alüminyum İmalat</strong><span class="mega-card-desc">Hafif yapı ve özel parça üretimi</span></a>
-                                <a href="metal-isleme.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Metal İşleme</strong><span class="mega-card-desc">Delme, form ve yüzey hazırlama</span></a>
-                                <a href="ozel-proje-imalati.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Özel Proje İmalatı</strong><span class="mega-card-desc">Proje bazlı özel üretim</span></a>
-                                <a href="moduler-tesisat-sistemleri.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Modüler Tesisat</strong><span class="mega-card-desc">Paslanmaz ve çelik tesisat çözümleri</span></a>
-                                <a href="aritma-sistemleri.html" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Arıtma Sistemleri</strong><span class="mega-card-desc">Su, gaz, toz, baca arıtma ve filtreler</span></a>
+                                <a href="/sac-lazer-kesim" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Lazer Kesim</strong><span class="mega-card-desc">Sac metal gruplarında hassas kesim</span></a>
+                                <a href="/boru-profil-lazer-kesim" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Boru / Profil Lazer Kesim</strong><span class="mega-card-desc">Boru ve profil gruplarında teknik kesim</span></a>
+                                <a href="/sac-bukum" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Sac Büküm</strong><span class="mega-card-desc">Ölçüye göre form ve açı çalışmaları</span></a>
+                                <a href="/kaynakli-imalat" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Kaynaklı İmalat</strong><span class="mega-card-desc">Kaynak ve montaj süreçleri</span></a>
+                                <a href="/paslanmaz-imalat" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Paslanmaz İmalat</strong><span class="mega-card-desc">Paslanmaz çelik üretim desteği</span></a>
+                                <a href="/aluminyum-imalat" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Alüminyum İmalat</strong><span class="mega-card-desc">Hafif yapı ve özel parça üretimi</span></a>
+                                <a href="/metal-isleme" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Metal İşleme</strong><span class="mega-card-desc">Delme, form ve yüzey hazırlama</span></a>
+                                <a href="/ozel-proje-imalati" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Özel Proje İmalatı</strong><span class="mega-card-desc">Proje bazlı özel üretim</span></a>
+                                <a href="/moduler-tesisat-sistemleri" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Modüler Tesisat</strong><span class="mega-card-desc">Paslanmaz ve çelik tesisat çözümleri</span></a>
+                                <a href="/aritma-sistemleri" class="mega-card"><span class="mega-card-accent" aria-hidden="true"></span><strong class="mega-card-title">Arıtma Sistemleri</strong><span class="mega-card-desc">Su, gaz, toz, baca arıtma ve filtreler</span></a>
                             </div>
                             <div class="mega-footer">
-                                <a href="hizmetler.html" class="mega-footer-link">Tüm Hizmetleri İncele <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                                <a href="/hizmetler" class="mega-footer-link">Tüm Hizmetleri İncele <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li><a href="projeler.html" class="nav-link">Projeler</a></li>
-                <li><a href="iletisim.html" class="nav-link" aria-current="page">İletişim</a></li>
+                <li><a href="/projeler" class="nav-link">Projeler</a></li>
+                <li><a href="/iletisim" class="nav-link" aria-current="page">İletişim</a></li>
             </ul>
-            <a href="teklif-al.html" class="btn btn-primary nav-cta">Teklif Al</a>
+            <a href="/teklif-al" class="btn btn-primary nav-cta">Teklif Al</a>
         </nav>
         <button class="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
             <span class="hamburger-line"></span>
@@ -356,42 +337,42 @@
     </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobil menü">
-    <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
-    <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+    <a href="/" class="mobile-nav-link">Ana Sayfa</a>
+    <a href="/hakkimizda" class="mobile-nav-link">Hakkımızda</a>
     <div class="mobile-nav-group">
         <div class="mobile-nav-row">
-            <a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a>
+            <a href="/hizmetler" class="mobile-nav-link">Hizmetler</a>
             <button class="mobile-submenu-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Hizmetler alt menüsünü aç">
                 <span class="mobile-submenu-arrow">⌄</span>
             </button>
         </div>
         <div class="mobile-submenu" id="mobile-services-submenu" hidden>
-            <a href="sac-lazer-kesim.html">Sac Lazer Kesim</a>
-            <a href="boru-profil-lazer-kesim.html">Boru / Profil Lazer Kesim</a>
-            <a href="sac-bukum.html">Sac Büküm</a>
-            <a href="kaynakli-imalat.html">Kaynaklı İmalat</a>
-            <a href="paslanmaz-imalat.html">Paslanmaz İmalat</a>
-            <a href="aluminyum-imalat.html">Alüminyum İmalat</a>
-            <a href="metal-isleme.html">Metal İşleme</a>
-            <a href="ozel-proje-imalati.html">Özel Proje İmalatı</a>
-            <a href="moduler-tesisat-sistemleri.html">Modüler Tesisat Sistemleri</a>
-            <a href="aritma-sistemleri.html">Arıtma Sistemleri</a>
+            <a href="/sac-lazer-kesim">Sac Lazer Kesim</a>
+            <a href="/boru-profil-lazer-kesim">Boru / Profil Lazer Kesim</a>
+            <a href="/sac-bukum">Sac Büküm</a>
+            <a href="/kaynakli-imalat">Kaynaklı İmalat</a>
+            <a href="/paslanmaz-imalat">Paslanmaz İmalat</a>
+            <a href="/aluminyum-imalat">Alüminyum İmalat</a>
+            <a href="/metal-isleme">Metal İşleme</a>
+            <a href="/ozel-proje-imalati">Özel Proje İmalatı</a>
+            <a href="/moduler-tesisat-sistemleri">Modüler Tesisat Sistemleri</a>
+            <a href="/aritma-sistemleri">Arıtma Sistemleri</a>
         </div>
     </div>
-    <a href="projeler.html" class="mobile-nav-link">Projeler</a>
-    <a href="iletisim.html" class="mobile-nav-link" aria-current="page">İletişim</a>
-    <a href="teklif-al.html" class="btn btn-primary mobile-nav-cta">Teklif Al</a>
+    <a href="/projeler" class="mobile-nav-link">Projeler</a>
+    <a href="/iletisim" class="mobile-nav-link" aria-current="page">İletişim</a>
+    <a href="/teklif-al" class="btn btn-primary mobile-nav-cta">Teklif Al</a>
 </nav>
 
 <main id="main-content">
 
     <!-- ===== PAGE HERO ===== -->
-    <section class="page-hero" aria-labelledby="iletisim-hero-title">
+    <section class="page-hero" id="iletisim-hero" aria-labelledby="iletisim-hero-title">
         <div class="container">
             <div class="page-hero-inner">
                 <div class="page-hero-left">
                     <nav class="breadcrumb" aria-label="Sayfa konumu">
-                        <a href="index.html" class="breadcrumb-link">Ana Sayfa</a>
+                        <a href="/" class="breadcrumb-link">Ana Sayfa</a>
                         <span class="breadcrumb-sep" aria-hidden="true">›</span>
                         <span class="breadcrumb-current" aria-current="page">İletişim</span>
                     </nav>
@@ -403,13 +384,13 @@
                     </p>
                 </div>
 
-                <div class="page-hero-module" aria-hidden="true">
+                <div class="page-hero-module">
                     <div class="ph-contact-grid">
-                        <div class="ph-contact-item">
+                        <div class="ph-contact-item ph-contact-item--phone">
                             <svg class="ph-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                             <div>
                                 <div class="ph-contact-label">Telefon</div>
-                                <div class="ph-contact-value">0549 780 42 20</div>
+                                <div class="ph-contact-value"><a href="tel:+905422381819">0542 238 18 19</a></div>
                             </div>
                         </div>
                         <div class="ph-contact-item">
@@ -475,7 +456,7 @@
                             </div>
                             <div class="contact-item-body">
                                 <p class="contact-item-label">Telefon</p>
-                                <p class="contact-item-value"><a href="tel:+905497804220">0549 780 42 20</a></p>
+                                <p class="contact-item-value"><a href="tel:+905422381819">0542 238 18 19</a></p>
                             </div>
                         </div>
 
@@ -495,17 +476,17 @@
                             </div>
                             <div class="contact-item-body">
                                 <p class="contact-item-label">Adres</p>
-                                <p class="contact-item-value">İvedik OSB, 1401. Sk. 45/A,<br>06810 Yenimahalle / Ankara</p>
+                                <p class="contact-item-value">İvedik OSB, 1401. Sk. 43/A,<br>06170 Yenimahalle / Ankara</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- WhatsApp -->
-                    <a href="#" class="contact-whatsapp" aria-label="WhatsApp ile iletişime geç">
+                    <a href="https://wa.me/905422381819" class="contact-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geç">
                         <svg class="contact-whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        <span>WhatsApp ile Yazın <span class="cap-badge-sm">NETLEŞTİRİLECEK</span></span>
+                        <span>WhatsApp ile Yazın</span>
                     </a>
 
                     <!-- Working Hours -->
@@ -598,26 +579,18 @@
                 <p>Ankara İvedik Organize Sanayi Bölgesi</p>
             </div>
 
-            <div class="map-placeholder reveal">
-                <div class="vp" style="width:100%;height:100%;">
-                    <div class="vp-corner-tr" aria-hidden="true"></div>
-                    <div class="vp-corner-bl" aria-hidden="true"></div>
-                    <div class="vp-crosshair" aria-hidden="true"></div>
-                    <div class="map-pin-label">
-                        <svg width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true">
-                            <path d="M18 0C8.059 0 0 8.059 0 18c0 13.5 18 26 18 26s18-12.5 18-26C36 8.059 27.941 0 18 0z" fill="#F2C94C"/>
-                            <circle cx="18" cy="18" r="7" fill="#07145A"/>
-                        </svg>
-                        <div class="map-pin-text">
-                            <strong>Foramak Makine Mühendislik</strong>
-                            <span>İvedik OSB, 1401. Sk. 45/A — Yenimahalle / Ankara</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="map-embed reveal">
+                <iframe
+                    src="https://www.google.com/maps?q=%C4%B0vedik%20OSB%2C%201401.%20Sk.%2043%2FA%2C%2006170%20Yenimahalle%20%2F%20Ankara&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Foramak Makine Konumu - İvedik OSB Ankara"
+                    allowfullscreen>
+                </iframe>
             </div>
 
             <div style="text-align:center; margin-top:24px;">
-                <a href="https://maps.google.com/?q=İvedik+OSB+1401+Sk+45/A+Yenimahalle+Ankara" target="_blank" rel="noopener noreferrer" class="map-directions-link">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=%C4%B0vedik+OSB+1401.+Sk.+43%2FA+06170+Yenimahalle+Ankara" target="_blank" rel="noopener noreferrer" class="map-directions-link">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
                     Google Maps'te Yol Tarifi Al
                 </a>
@@ -637,8 +610,8 @@
                     DXF, DWG, PDF veya teknik ölçü listenizle teklif formunu doldurun; üretim kapsamı ve fiyatlandırma için dönüş sağlayalım.
                 </p>
                 <div class="cta-band-actions">
-                    <a href="teklif-al.html" class="btn btn-primary">Teklif Al</a>
-                    <a href="hizmetler.html" class="btn btn-outline-white">Hizmetleri İncele</a>
+                    <a href="/teklif-al" class="btn btn-primary">Teklif Al</a>
+                    <a href="/hizmetler" class="btn btn-outline-white">Hizmetleri İncele</a>
                 </div>
             </div>
         </div>
@@ -652,7 +625,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-logo-col">
-                <a href="index.html" class="logo" aria-label="Foramak Makine">
+                <a href="/" class="logo" aria-label="Foramak Makine">
                     <img src="assets/images/foramak_makina_logo.svg" alt="Foramak Makine Mühendislik" class="logo-img" height="62">
                 </a>
                 <p class="footer-desc">Foramak Makine; lazer kesim, büküm, kaynaklı imalat ve özel metal üretim süreçlerinde teknik çözümler sunar.</p>
@@ -660,31 +633,31 @@
             <div>
                 <p class="footer-col-title">Hizmetler</p>
                 <ul class="footer-links">
-                    <li><a href="hizmetler.html" class="footer-link">Sac Lazer Kesim</a></li>
-                    <li><a href="hizmetler.html" class="footer-link">Boru/Profil Lazer Kesim</a></li>
-                    <li><a href="hizmetler.html" class="footer-link">Sac Büküm</a></li>
-                    <li><a href="hizmetler.html" class="footer-link">Kaynaklı İmalat</a></li>
-                    <li><a href="hizmetler.html" class="footer-link">Paslanmaz İmalat</a></li>
-                    <li><a href="hizmetler.html" class="footer-link">Alüminyum İmalat</a></li>
-                    <li><a href="moduler-tesisat-sistemleri.html" class="footer-link">Modüler Tesisat</a></li>
-                    <li><a href="aritma-sistemleri.html" class="footer-link">Arıtma Sistemleri</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Sac Lazer Kesim</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Boru/Profil Lazer Kesim</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Sac Büküm</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Kaynaklı İmalat</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Paslanmaz İmalat</a></li>
+                    <li><a href="/hizmetler" class="footer-link">Alüminyum İmalat</a></li>
+                    <li><a href="/moduler-tesisat-sistemleri" class="footer-link">Modüler Tesisat</a></li>
+                    <li><a href="/aritma-sistemleri" class="footer-link">Arıtma Sistemleri</a></li>
                 </ul>
             </div>
             <div>
                 <p class="footer-col-title">Kurumsal</p>
                 <ul class="footer-links">
-                    <li><a href="hakkimizda.html" class="footer-link">Hakkımızda</a></li>
-                    <li><a href="projeler.html" class="footer-link">Projeler</a></li>
-                    <li><a href="sektorler.html" class="footer-link">Sektörler</a></li>
-                    <li><a href="teklif-al.html" class="footer-link">Teklif Al</a></li>
-                    <li><a href="iletisim.html" class="footer-link">İletişim</a></li>
+                    <li><a href="/hakkimizda" class="footer-link">Hakkımızda</a></li>
+                    <li><a href="/projeler" class="footer-link">Projeler</a></li>
+                    <li><a href="/sektorler" class="footer-link">Sektörler</a></li>
+                    <li><a href="/teklif-al" class="footer-link">Teklif Al</a></li>
+                    <li><a href="/iletisim" class="footer-link">İletişim</a></li>
                 </ul>
             </div>
             <div>
                 <p class="footer-col-title">İletişim</p>
                 <div class="footer-contact-item">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                    <a href="tel:+905497804220">0549 780 42 20</a>
+                    <a href="tel:+905422381819">0542 238 18 19</a>
                 </div>
                 <div class="footer-contact-item">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -692,18 +665,18 @@
                 </div>
                 <div class="footer-contact-item">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>İvedik OSB, 1401. Sk. 45/A,<br>06810 Yenimahalle / Ankara</span>
+                    <span>İvedik OSB, 1401. Sk. 43/A,<br>06170 Yenimahalle / Ankara</span>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-copy">© <span class="js-year"></span> Foramak Makine Mühendislik. Tüm hakları saklıdır.</p>
-            <a href="https://www.eek-media.com/by-eek" class="footer-eek" target="_blank" rel="noopener noreferrer" aria-label="EEK tarafından tasarlandı">by EEK</a>
+            <a href="https://www.eek-media.com/by-eek" class="footer-credit-link" target="_blank" rel="noopener noreferrer" aria-label="EEK tarafından tasarlandı">by EEK</a>
         </div>
     </div>
 </footer>
 
-<script src="js/main.js?v=8"></script>
+<script src="js/main.js?v=9"></script>
 <script>
     // Contact form handler
     document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -717,7 +690,7 @@
 
 <!-- WhatsApp Float Button -->
 <a
-  href="https://wa.me/90XXXXXXXXXX"
+  href="https://wa.me/905422381819"
   class="whatsapp-float"
   target="_blank"
   rel="noopener noreferrer"

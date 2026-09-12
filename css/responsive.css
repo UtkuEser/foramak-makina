@@ -49,6 +49,9 @@
     .sector-featured-grid { grid-template-columns: repeat(2, 1fr); }
     .sector-card--featured { grid-column: span 2; }
 
+    /* Süreç mini kartları — tablette 2+1 */
+    .process-mini-grid { grid-template-columns: repeat(2, 1fr); }
+
     .capacity-inner { grid-template-columns: 1fr; }
 
     .about-grid { grid-template-columns: 1fr; }
@@ -68,6 +71,32 @@
     .projects-page-grid { grid-template-columns: repeat(2, 1fr); }
 
     .sectors-page-grid { grid-template-columns: 1fr; }
+
+    /* ---- Hizmet sayfası v2 — hero & overview tek kolona düşer ---- */
+    .svc2-hero-inner,
+    .svc2-overview-grid { grid-template-columns: 1fr; gap: var(--sp-xl); }
+
+    .svc2-hero-desc { max-width: 100%; }
+
+    .svc2-hero-visual { aspect-ratio: 16 / 9; }
+
+    /* Teknik özet şeridi görsel üzerine taşmasın — görselin altına düz akışa iner */
+    .svc2-tech-panel {
+        position: static;
+        left: auto; right: auto; bottom: auto;
+        margin-top: 14px;
+        box-shadow: var(--shadow-sm);
+    }
+    .svc2-tech-panel-list { grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+
+    .svc2-overview-right { display: block; }
+    .svc2-data-card { height: auto; }
+
+    .svc2-material-grid,
+    .svc2-material-grid--auto { grid-template-columns: repeat(2, 1fr); }
+
+    /* Bizi Bulun — harita, tablette biraz daha kısa */
+    .map-embed { height: 350px; }
 }
 
 
@@ -183,17 +212,10 @@
     /* ---- WhatsApp float ---- */
     .whatsapp-float { width: 52px; height: 52px; right: 18px; bottom: 18px; }
 
-    /* ---- Capabilities strip ---- */
-    .capabilities-strip { grid-template-columns: 1fr 1fr; }
-    .cap-item   { padding: 14px 12px; gap: 9px; }
-    .cap-icon   { width: 22px; height: 22px; }
-    .cap-label  { font-size: 0.72rem; }
-    .cap-sub    { font-size: 0.62rem; }
-
     /* ---- Service cards ---- */
     .services-grid        { grid-template-columns: 1fr; }
     .services-detail-grid { grid-template-columns: 1fr; }
-    .service-card         { padding: var(--sp-lg); }
+    .service-card         { padding: 20px; }
     .service-card-num     { font-size: 1.8rem; }
     .service-card-title   { font-size: var(--fs-base); }
 
@@ -287,6 +309,28 @@
 
     /* ---- Process ---- */
     .process-steps { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+
+    /* ---- Hizmet sayfası v2 — padding azaltma ve CTA stack ---- */
+    .svc2-hero            { padding: calc(var(--header-height) + 1.25rem) 0 48px; }
+    .svc2-overview,
+    .svc2-materials,
+    .svc2-industries      { padding: 44px 0; }
+    .svc2-cta             { padding: 36px 0; }
+
+    .svc2-cta-inner   { grid-template-columns: 1fr; gap: var(--sp-lg); padding: 26px 22px; border-radius: 14px; }
+    .svc2-cta-left    { max-width: 100%; }
+    .svc2-cta-desc    { max-width: 100%; }
+    .svc2-cta-right   { justify-self: stretch; }
+    .svc2-cta-actions { justify-content: flex-start; }
+    .svc2-cta-actions .btn { flex: 1 1 auto; justify-content: center; text-align: center; }
+
+    .svc2-industry-grid { grid-template-columns: 1fr; }
+    .svc2-industry-body { padding: 18px 40px 18px 18px; }
+
+    .svc2-trust-row { gap: 16px 22px; }
+
+    /* Blueprint dekoratif çizimler mobilde tamamen gizlenir — taşma/karmaşa riski yok */
+    .svc2-blueprint-deco { display: none; }
 }
 
 
@@ -296,6 +340,10 @@
 
     /* ---- Hakkımızda Sektör grid ---- */
     .sektor-grid-hakkimizda { grid-template-columns: 1fr; }
+
+    /* ---- Bizi Bulun — harita mobilde daha kısa, taşma yok ---- */
+    .map-embed { height: 300px; }
+    .map-directions-link { padding: 8px 4px; }
 
     /* ---- Section ---- */
     .section       { padding: 2.5rem 0; }
@@ -312,14 +360,6 @@
 
     /* ---- Page hero ---- */
     .page-hero-title { font-size: 1.45rem; }
-
-    /* ---- Capabilities strip — tek sütun ---- */
-    .capabilities-strip { grid-template-columns: 1fr; }
-    .cap-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .cap-item:last-child { border-bottom: none; }
 
     /* ---- Quick quote ---- */
     .quick-quote-card { padding: 20px 16px; }
@@ -342,6 +382,9 @@
     /* ---- Sector featured grid ---- */
     .sector-featured-grid  { grid-template-columns: 1fr; }
     .sector-card--featured { grid-column: span 1; }
+
+    /* ---- Süreç mini kartları — mobilde tek kolon ---- */
+    .process-mini-grid { grid-template-columns: 1fr; gap: 12px; }
 
     /* ---- CTA steps — tek sütun ---- */
     .cta-steps { grid-template-columns: 1fr; }
@@ -377,6 +420,16 @@
 
     /* ---- Hakkımızda Sektör grid ---- */
     .sektor-grid-hakkimizda { grid-template-columns: repeat(2, 1fr); }
+
+    /* ---- Hizmet sayfası v2 — küçük telefon ---- */
+    .svc2-material-grid,
+    .svc2-material-grid--auto { grid-template-columns: 1fr; }
+    .svc2-hero-visual    { aspect-ratio: 4 / 3.2; }
+    .svc2-tech-panel     { padding: 14px 14px; }
+    .svc2-tech-panel-list { grid-template-columns: 1fr; gap: 8px; }
+    .svc2-industry-media { width: 84px; }
+    .svc2-industry-media svg { width: 28px; height: 28px; }
+    .svc2-hero-title     { font-size: 1.75rem; }
 }
 
 
@@ -385,6 +438,10 @@
     .services-detail-grid--3col {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    /* Paslanmaz üretim vitrini — 1100px altında 2x2 */
+    .ss-panel-grid { grid-template-columns: repeat(2, 1fr); }
+    .ss-panel { height: 260px; }
 }
 
 @media (max-width: 640px) {
@@ -398,6 +455,10 @@
 
     /* Hizmetler 3-kol 640px altında tek kolon */
     .services-detail-grid--3col { grid-template-columns: 1fr; }
+
+    /* Paslanmaz üretim vitrini 640px altında tek kolon */
+    .ss-panel-grid { grid-template-columns: 1fr; gap: 12px; }
+    .ss-panel { height: 280px; }
 }
 
 
