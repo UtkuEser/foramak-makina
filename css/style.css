@@ -3547,6 +3547,9 @@ select.form-control {
 
 .svc2-material-card:hover { border-color: var(--color-yellow-alt); box-shadow: var(--shadow-md); transform: translateY(-3px); }
 
+/* Ana sayfadan #anchor ile gelinen ürün kartı sabit header'ın altında kalmasın */
+.svc2-material-card[id] { scroll-margin-top: calc(var(--header-height) + 32px); }
+
 .svc2-material-icon { display: inline-flex; width: 30px; height: 30px; color: var(--color-navy); opacity: 0.7; margin-bottom: 14px; transition: color var(--tr-base); }
 .svc2-material-card:hover .svc2-material-icon { color: var(--color-yellow-alt); }
 
@@ -3929,3 +3932,194 @@ select.form-control {
     color: var(--color-text-muted);
     line-height: var(--lh-relaxed);
 }
+
+
+/* === FOOTER — TEKNİK BİLGİLER VE REHBERLER (yalnızca hizmet ve rehber sayfaları) === */
+.footer-guides {
+    padding: var(--sp-lg) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-guides .footer-col-title { margin-bottom: var(--sp-sm); }
+
+.footer-guides-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 40px;
+}
+
+@media (max-width: 768px) {
+    .footer-guides-list { flex-direction: column; gap: 12px; }
+}
+
+
+/* === TEKNİK REHBER (MAKALE) SAYFALARI === */
+.guide-hero-text { grid-column: 1 / -1; max-width: 820px; }
+
+.guide-kicker {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-yellow);
+    margin-bottom: var(--sp-sm);
+}
+
+.guide-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: var(--sp-2xl);
+    align-items: start;
+}
+
+.guide-article {
+    max-width: 760px;
+    color: var(--color-text-body);
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+}
+
+.guide-article .guide-lead {
+    font-size: var(--fs-md);
+    color: var(--color-text-dark);
+    margin-bottom: var(--sp-xl);
+}
+
+.guide-block { margin-bottom: var(--sp-xl); }
+
+.guide-article h2 {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-snug);
+    color: var(--color-text-dark);
+    margin-bottom: var(--sp-sm);
+}
+
+.guide-article h3 {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-dark);
+    margin: var(--sp-md) 0 var(--sp-xs);
+}
+
+.guide-article p { margin-bottom: var(--sp-sm); }
+
+.guide-article ul {
+    list-style: none;
+    margin: 0 0 var(--sp-sm);
+    padding: 0;
+}
+
+.guide-article ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+}
+
+.guide-article ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.8em;
+    width: 12px;
+    height: 2px;
+    background: var(--color-yellow);
+}
+
+.guide-article a,
+.guide-aside a {
+    color: var(--color-navy);
+    font-weight: var(--fw-medium);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.guide-cta {
+    margin-top: var(--sp-xl);
+    padding: var(--sp-lg);
+    background: var(--color-navy);
+    border-radius: var(--radius-lg);
+    color: rgba(255,255,255,0.8);
+}
+
+.guide-cta-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    margin-bottom: var(--sp-xs);
+}
+
+.guide-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-md);
+    margin-top: var(--sp-md);
+}
+
+.guide-article .guide-cta-actions a.btn { color: var(--color-deep); text-decoration: none; }
+.guide-article .guide-cta-phone { color: var(--color-white); }
+
+.guide-aside {
+    position: sticky;
+    top: calc(var(--header-height) + var(--sp-md));
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+
+.guide-aside-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-md);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+    color: var(--color-text-body);
+}
+
+.guide-aside-title {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--sp-xs);
+}
+
+.guide-aside-service {
+    display: inline-block;
+    font-size: var(--fs-md);
+    margin-bottom: var(--sp-xs);
+}
+
+.guide-aside ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+
+@media (max-width: 960px) {
+    .guide-layout { grid-template-columns: 1fr; gap: var(--sp-xl); }
+    .guide-aside { position: static; }
+}
+
+@media (max-width: 480px) {
+    .guide-article h2 { font-size: var(--fs-lg); }
+    .guide-article .guide-lead { font-size: var(--fs-base); }
+    .guide-cta { padding: var(--sp-md); }
+}
+
+
+/* === KVKK / YASAL METİN SAYFASI === */
+.legal-draft {
+    margin-bottom: var(--sp-lg);
+    padding: 14px 18px;
+    border: 1px solid #FDE68A;
+    border-left: 4px solid var(--color-yellow-alt);
+    border-radius: var(--radius-md);
+    background: #FFFBEB;
+    color: #92400E;
+    font-size: var(--fs-sm);
+}
+.legal-draft strong { display: block; margin-bottom: 4px; }
+
+.legal-article h2 { margin-top: var(--sp-lg); }
+.legal-note { color: #92400E; background: #FFFBEB; padding: 0 3px; border-radius: 3px; }
+.legal-note-block { font-size: var(--fs-sm); }

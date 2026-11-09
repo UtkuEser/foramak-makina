@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite --host 0.0.0.0 --port 5500",
-    "build:services": "node build/generate-service-pages.js"
+    "build:services": "node build/generate-service-pages.js",
+    "build:seo": "node build/generate-guide-pages.js",
+    "build:quote": "node build/generate-quote-pages.js",
+    "build:site": "npm run build:services && npm run build:seo && npm run build:quote"
   },
   "keywords": [],
   "author": "",

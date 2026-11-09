@@ -1,0 +1,27 @@
+# Supabase CLI yapılandırması (yalnızca teklif sistemi için gereken kısımlar).
+# Tam şablon için: supabase init. Gizli değer bu dosyaya YAZILMAZ.
+
+project_id = "foramak-makina"
+
+# Bu fonksiyonlar tarayıcıdan oturumsuz çağrılır. Platformun JWT kontrolü
+# kapalıdır; koruma fonksiyon içindedir: Origin listesi + Turnstile + hız
+# sınırı (quote-init), tek kullanımlık finalize belirteci (quote-finalize),
+# MAINTENANCE_SECRET başlığı (quote-maintenance).
+[functions.quote-init]
+verify_jwt = false
+
+[functions.quote-finalize]
+verify_jwt = false
+
+[functions.quote-maintenance]
+verify_jwt = false
+
+# Yerel geliştirme (supabase start) için bucket. Canlı projede migration ve
+# quote-maintenance aynı ayarları uygular.
+[storage.buckets.quote-attachments]
+public = false
+file_size_limit = "20MiB"
+allowed_mime_types = [
+    "application/pdf", "image/vnd.dwg", "image/vnd.dxf", "model/step", "model/iges", "model/stl",
+    "image/jpeg", "image/png", "application/zip", "application/octet-stream",
+]

@@ -1,6 +1,8 @@
 'use strict';
 
 const { icon } = require('./icons');
+const { seoHead, jsonLd, breadcrumbLd, footerGuides, BUSINESS, pageUrl } = require('./seo');
+const { GUIDES } = require('./guide-data');
 
 /* ================================================================
    Sabit, tüm hizmet sayfalarında birebir aynı kalan bloklar
@@ -12,7 +14,7 @@ const { icon } = require('./icons');
 const HEAD_FONTS = `    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=25">
+    <link rel="stylesheet" href="css/style.css?v=26">
     <link rel="stylesheet" href="css/responsive.css?v=17">`;
 
 /* ----------------------------------------------------------------
@@ -104,7 +106,8 @@ const HEADER = `<!-- ===== HEADER ===== -->
     <a href="/teklif-al" class="btn btn-primary mobile-nav-cta">Teklif Al</a>
 </nav>`;
 
-const FOOTER = `<footer class="footer" role="contentinfo">
+/* guidesHtml: yalnızca hizmet ve rehber sayfalarında footer-bottom'dan önce eklenen rehber bölümü */
+const footer = (guidesHtml = '') => `<footer class="footer" role="contentinfo">
     ${DECO_RULER}
     ${CLUSTER_BR}
     <div class="container">
@@ -152,7 +155,7 @@ const FOOTER = `<footer class="footer" role="contentinfo">
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+${guidesHtml}        <div class="footer-bottom">
             <p class="footer-copy">© <span class="js-year"></span> Foramak Makine Mühendislik. Tüm hakları saklıdır.</p>
             <a href="https://www.eek-media.com/by-eek" class="footer-credit-link" target="_blank" rel="noopener noreferrer" aria-label="EEK tarafından tasarlandı">by EEK</a>
         </div>
@@ -293,7 +296,9 @@ function ServiceOverview(cfg) {
    MaterialGrid
    ================================================================ */
 function materialCard(m) {
-    return `                <div class="svc2-material-card service-material-card">
+    /* m.id opsiyonel: ana sayfadan ürün kartına doğrudan bağlantı (anchor) için */
+    const idAttr = m.id ? ` id="${esc(m.id)}"` : '';
+    return `                <div class="svc2-material-card service-material-card"${idAttr}>
                     <span class="svc2-material-icon">${icon(m.icon)}</span>
                     <h3 class="svc2-material-card-title">${esc(m.title)}</h3>
                     <p class="svc2-material-card-desc">${esc(m.desc)}</p>
@@ -431,6 +436,16 @@ function renderServicePage(cfg) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${esc(cfg.metaDescription)}">
     <title>${esc(cfg.title)} | Foramak Makine</title>
+${seoHead({
+        title: `${cfg.title} | Foramak Makine`,
+        description: cfg.metaDescription,
+        path: `/${cfg.slug}`,
+        image: cfg.heroImage,
+        ld: [
+            breadcrumbLd([['Ana Sayfa', '/'], ['Hizmetler', '/hizmetler'], [cfg.breadcrumbLabel, `/${cfg.slug}`]]),
+            jsonLd({ '@type': 'Service', name: cfg.title, serviceType: cfg.title, description: cfg.metaDescription, url: pageUrl(`/${cfg.slug}`), provider: BUSINESS, areaServed: BUSINESS.areaServed }),
+        ],
+    })}
 ${HEAD_FONTS}
 </head>
 <body>
@@ -443,10 +458,10 @@ ${sections}
 
 </main>
 
-${FOOTER}
+${footer(footerGuides(cfg.slug, GUIDES))}
 </body>
 </html>
 `;
 }
 
-module.exports = { renderServicePage };
+module.exports = { renderServicePage, HEADER, footer, HEAD_FONTS, esc };

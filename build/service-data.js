@@ -206,7 +206,7 @@ const SERVICES = [
         breadcrumbLabel: 'Paslanmaz İmalat',
         title: 'Paslanmaz İmalat',
         heroDesc: 'AISI 304, AISI 316 ve türevleri paslanmaz çelik gruplarında hijyenik, dayanıklı ve korozyon dirençli üretim desteği.',
-        heroImage: 'assets/images/hizmetlerimiz/paslanmaz imalat.png',
+        heroImage: 'assets/images/foramak-paslanmaz-tesisat.webp',
         heroTechPanel: false,
         heroSpecs: [
             { icon: 'materialB', label: 'Malzeme Grupları', value: 'AISI 304 · AISI 316 / 316L' },
@@ -240,10 +240,10 @@ const SERVICES = [
             title: 'Paslanmaz İmalat Ürün Grupları',
             items: [
                 { icon: 'water', title: 'Paslanmaz Su Deposu', desc: 'İçme ve proses suyu depolama ihtiyaçları için hijyenik paslanmaz su deposu imalatı.' },
-                { icon: 'food', title: 'Paslanmaz Gıda Tankları', desc: 'Gıda üretiminde hijyen şartlarına uygun paslanmaz tank ve depolama ekipmanı üretimi.' },
+                { icon: 'food', id: 'paslanmaz-gida-tanklari', title: 'Paslanmaz Gıda Tankları', desc: 'Gıda üretiminde hijyen şartlarına uygun paslanmaz tank ve depolama ekipmanı üretimi.' },
                 { icon: 'gear', title: 'Paslanmaz Reaktör', desc: 'Kimya ve proses hatlarında kullanılan paslanmaz reaktör gövdesi ve ekipman imalatı.' },
-                { icon: 'pipe', title: 'Paslanmaz Borulu Eşanjör', desc: 'Isı transferi uygulamaları için paslanmaz borulu eşanjör imalatı ve montaja hazır üretim.' },
-                { icon: 'profile', title: 'Paslanmaz Kollektör', desc: 'Tesisat hatlarında dağıtım ve toplama işlevi gören paslanmaz kollektör üretimi.' },
+                { icon: 'pipe', id: 'paslanmaz-borulu-esanjor', title: 'Paslanmaz Borulu Eşanjör', desc: 'Isı transferi uygulamaları için paslanmaz borulu eşanjör imalatı ve montaja hazır üretim.' },
+                { icon: 'profile', id: 'paslanmaz-kollektor', title: 'Paslanmaz Kollektör', desc: 'Tesisat hatlarında dağıtım ve toplama işlevi gören paslanmaz kollektör üretimi.' },
                 { icon: 'materialB', title: 'Paslanmaz Tesisat', desc: 'Boru, flanş ve bağlantı elemanlarıyla proje bazlı paslanmaz tesisat hattı imalatı.' },
                 { icon: 'target', title: 'Özel Üretim Makineler', desc: 'Teknik çizime dayalı, proje ihtiyacına özel paslanmaz makine ve ekipman parçası üretimi.' },
                 { icon: 'check', title: 'Paslanmaz Tortu Tutucu', desc: 'Proses hatlarında partikül ve tortu ayrıştırma amaçlı paslanmaz ekipman imalatı.' },

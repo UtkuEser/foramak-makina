@@ -1,0 +1,8 @@
+# Site build adımı olmadan statik yayınlanır; kök dizindeki her dosya public olur.
+# Teklif sisteminin sunucu kodu, kurulum belgeleri ve ortam dosyaları yayına girmez.
+supabase/
+docs/
+# Sayfa üreticileri (service/guide/legal/og) — yalnızca yerelde çalışır, çıktıları kökte yayınlanır
+build/
+.env
+.env.*

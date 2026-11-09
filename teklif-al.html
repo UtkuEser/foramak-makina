@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lazer kesim, sac büküm, boru/profil kesim ve kaynaklı imalat projeleriniz için teknik çiziminizi gönderin, Foramak Makine'den teklif alın.">
     <title>Teklif Al | Teknik Çizim Gönder, Üretim Teklifi Al</title>
+    <!-- SEO -->
+    <link rel="canonical" href="https://www.foramak.com/teklif-al">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Foramak Makine">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Teklif Al | Teknik Çizim Gönder, Üretim Teklifi Al">
+    <meta property="og:description" content="Lazer kesim, sac büküm, boru/profil kesim ve kaynaklı imalat projeleriniz için teknik çiziminizi gönderin, Foramak Makine'den teklif alın.">
+    <meta property="og:url" content="https://www.foramak.com/teklif-al">
+    <meta property="og:image" content="https://www.foramak.com/assets/images/og/paslanmaz-lazer-kesim.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://www.foramak.com/"},{"@type":"ListItem","position":2,"name":"Teklif Al","item":"https://www.foramak.com/teklif-al"}]}</script>
+    <!-- /SEO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=25">
     <link rel="stylesheet" href="css/responsive.css?v=17">
+    <link rel="stylesheet" href="css/quote-form.css?v=3">
 </head>
 <body>
 
@@ -199,7 +214,7 @@
                     <div class="form-card">
                         <h3 class="form-title">Teklif Talep Formu</h3>
 
-                        <form action="#" method="post" aria-label="Teklif talep formu" novalidate>
+                        <form id="teklif-formu" action="#" method="post" aria-label="Teklif talep formu" novalidate>
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -233,7 +248,10 @@
                                     <option value="kaynak">Kaynaklı İmalat</option>
                                     <option value="paslanmaz">Paslanmaz İmalat</option>
                                     <option value="aluminyum">Alüminyum İmalat</option>
+                                    <option value="metal-isleme">Metal İşleme</option>
                                     <option value="ozel">Özel Proje İmalatı</option>
+                                    <option value="moduler-tesisat">Modüler Tesisat Sistemleri</option>
+                                    <option value="aritma">Arıtma Sistemleri</option>
                                     <option value="birden-fazla">Birden Fazla Hizmet</option>
                                 </select>
                             </div>
@@ -271,10 +289,11 @@
                             <div class="form-group">
                                 <label class="form-label" for="dosya">Teknik Çizim / Dosya Yükle</label>
                                 <div class="file-upload-area">
-                                    <input type="file" id="dosya" name="dosya" multiple accept=".pdf,.dxf,.dwg,.jpg,.jpeg,.png" aria-describedby="dosya-formats">
+                                    <input type="file" id="dosya" name="dosya" multiple accept=".pdf,.dwg,.dxf,.sldprt,.sldasm,.slddrw,.step,.stp,.iges,.igs,.x_t,.x_b,.stl,.jpg,.jpeg,.png,.zip" aria-describedby="dosya-formats dosya-zip-notu">
                                     <svg class="file-upload-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                                     <p class="file-upload-title">Dosya seçin veya bu alana sürükleyin</p>
-                                    <p class="file-upload-formats" id="dosya-formats">PDF, DXF, DWG, JPG, PNG — Maks. birden fazla dosya</p>
+                                    <p class="file-upload-formats" id="dosya-formats">PDF, DWG, DXF, STEP, SolidWorks ve diğer CAD dosyaları kabul edilir. En fazla 3 dosya, dosya başına 20 MB.</p>
+                                    <p class="file-upload-formats" id="dosya-zip-notu">Montaj dosyalarını parçalarıyla birlikte ZIP olarak yükleyebilirsiniz.</p>
                                 </div>
                             </div>
 
@@ -291,9 +310,18 @@
                                 </label>
                             </div>
 
+                            <div class="form-hp" aria-hidden="true">
+                                <label for="web_sitesi">Bu alanı boş bırakın</label>
+                                <input type="text" id="web_sitesi" name="web_sitesi" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-turnstile" id="teklif-turnstile"></div>
+
                             <button type="submit" class="form-submit">
                                 Teklif Talebi Gönder
                             </button>
+
+                            <div class="form-status" id="teklif-form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
 
                             <p style="font-size:var(--fs-xs); color:var(--color-text-muted); text-align:center; margin-top:var(--sp-sm);">
                                 Form gönderimi alındıktan sonra en kısa sürede dönüş yapılacaktır.
@@ -367,6 +395,8 @@
 </footer>
 
 <script src="js/main.js?v=9"></script>
+<script src="js/quote-config.js?v=1"></script>
+<script src="js/quote-form.js?v=3"></script>
 
 <!-- WhatsApp Float Button -->
 <a
