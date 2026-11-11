@@ -64,6 +64,7 @@
     var submissionId = newSubmissionId();
     var warmedUp = false;
     var ts = { loader: null, widgetId: null, pending: null };
+    applyNoticeLink(env);
 
 
     /* === YAPILANDIRMA === */
@@ -84,6 +85,20 @@
             if (TURNSTILE_TEST_SITEKEY.test(e.turnstileSiteKey)) return false;
         }
         return true;
+    }
+
+    function isValidNoticeUrl(u) {
+        return typeof u === 'string' && (/^\/[a-z0-9][a-z0-9\-\/]*$/i.test(u) || /^https:\/\/[^\s"'<>]+$/.test(u));
+    }
+
+    /* Formdaki KVKK bağlantısı yalnızca yapılandırmada geçerli bir adres varsa ona gider */
+    function applyNoticeLink(e) {
+        if (!e || !isValidNoticeUrl(e.privacyNoticeUrl)) return;
+        var link = form.querySelector('.form-kvkk-label a');
+        if (!link) return;
+        link.setAttribute('href', e.privacyNoticeUrl);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
     }
 
     function newSubmissionId() {

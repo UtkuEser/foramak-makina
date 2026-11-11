@@ -3,9 +3,11 @@
 Bu belge `teklif-al.html` formunun Supabase + Resend + Cloudflare Turnstile altyapısını anlatır.
 Belge ve `supabase/` klasörü `.vercelignore` ile yayından hariç tutulur.
 
-> **Durum:** Aşama 1 (yerel altyapı) tamamlandı. Canlı sitede form **kapalıdır**: `js/quote-config.js`
-> boş değerlerle ve `submissionsEnabled: false` ile gelir; gönderimde ziyaretçi e-posta / telefona
-> yönlendirilir. Sahte başarı mesajı yoktur.
+> **Durum (2026-11-11):** Altyapı production'da kurulu (3 Edge Function, bakım görevi). Supabase
+> `QUOTE_SUBMISSIONS_ENABLED` açık; `js/quote-config.js` → `production` bölümünde Supabase URL'si,
+> publishable key ve gerçek Turnstile site key dolu, `submissionsEnabled: true`. Form canlıda gönderim
+> kabul eder. **Açık risk:** onaylı KVKK aydınlatma metni yayında değil; `privacyNoticeUrl` boş ve
+> formdaki bağlantı `href="#"`. Sahte başarı mesajı yoktur.
 
 ---
 
@@ -122,6 +124,9 @@ Site build adımı olmadan statik yayınlandığı için değerler doğrudan bu 
 - `supabaseUrl` — `https://<project-ref>.supabase.co`
 - `supabasePublishableKey` — `sb_publishable_…` (tarayıcı için tasarlanmıştır; RLS sayesinde hiçbir tabloya erişim vermez)
 - `turnstileSiteKey` — production'da gerçek site key (test anahtarı yazılırsa form devre dışı kalır)
+- `privacyNoticeUrl` — hukuken onaylanmış KVKK aydınlatma metninin adresi (ör. `/kvkk-aydinlatma-metni`).
+  Formdaki "KVKK Aydınlatma Metni" bağlantısı bu adrese gider; boşsa `href="#"` kalır (gönderimi
+  engellemez — canlıya geçiş riski olarak takip edilir). Yalnızca `/…` site içi yol veya `https://…` kabul edilir.
 - `submissionsEnabled`
 
 **Asla yazılmayacaklar:** `sb_secret_…` / `service_role` anahtarı, Turnstile secret, Resend API key.
@@ -314,11 +319,19 @@ select a.original_filename, a.file_size, a.content_type,
 
 Bu bölüm hukuki metin değildir; avukat / KVKK danışmanına sorulacak noktaları listeler.
 
-- **Aydınlatma metni yok:** Formdaki "KVKK Aydınlatma Metni" bağlantısı `href="#"`. Onaylanmış metin
-  hazırlanana kadar bağlantı ve onay kutusu metni olduğu gibi bırakıldı; metin uydurulmadı.
-- **Onay kutusu ifadesi:** "Kişisel verilerimin … işlenmesini kabul ediyorum … Aydınlatma Metni'ni
-  okudum ve onaylıyorum" ifadesi aydınlatma ile açık rızayı birleştiriyor. Teklif sürecinin hangi
-  hukuki sebebe dayanacağı (ör. sözleşmenin kurulması) ve açık rıza gerekip gerekmediği değerlendirilmeli.
+- **Aydınlatma metni yayında değil:** Taslak metin yerel proje klasöründe hazır, ancak şirket unvanı,
+  saklama süreleri, yurt dışı aktarım mekanizmaları ve elektronik başvuru yöntemleri kesinleşmediği için
+  yayımlanmadı. Formdaki bağlantı `href="#"`; onaylı metin yayımlanınca `privacyNoticeUrl` ile bağlanır.
+- **Onay kutusu ifadesi:** Zorunlu kutu "Kişisel verilerimin … işlenmesini kabul ediyorum … Aydınlatma
+  Metni'ni okudum ve onaylıyorum" diyor; aydınlatma (bilgilendirme) ile açık rızayı tek, zorunlu kutuda
+  birleştiriyor. Taslak aydınlatma metni ise işlemeyi KVKK m.5/2 hukuki sebeplerine dayandırıyor.
+  Avukat kararı gereken iki seçenek:
+  1. Açık rıza gerekmiyorsa: kutu yalnızca aydınlatmanın okunduğunu belirtir (ifadeyi avukat belirler).
+  2. Belirli bir işlem (ör. m.9 kapsamında rızaya dayalı aktarım) için açık rıza gerekiyorsa: aydınlatma
+     bilgisinden **ayrı**, işaretsiz gelen ayrı bir kutu ve ayrı kayıt alanı gerekir.
+  Mevcut veritabanı yalnızca `kvkk_acknowledged_at` (aydınlatma onay zamanı) tutar; açık rıza alanı
+  yoktur. Seçenek 1 veritabanını etkilemez. Seçenek 2 için yeni, boş bırakılabilir bir sütun
+  (ör. `explicit_consent_at`) ve metin sürümü alanı eklenmeli; mevcut kayıtlar etkilenmez.
 - **Yurt dışına aktarım:** Veriler Türkiye dışındaki hizmet sağlayıcılarda işlenir:
   - Supabase (veritabanı + teknik çizimler; seçilen bölge, ör. Frankfurt)
   - Resend (bildirim e-postası içeriği: ad, telefon, e-posta, proje bilgisi)
@@ -358,6 +371,9 @@ Bu değerlendirme tamamlanmadan `QUOTE_SUBMISSIONS_ENABLED` ve `submissionsEnabl
 - [ ] Aşama 3 testlerinin tamamı geçti, test kayıtları silindi
 - [ ] Secrets production değerlerinde (`QUOTE_ENVIRONMENT=production`, gerçek Turnstile secret)
 - [ ] `QUOTE_SUBMISSIONS_ENABLED=true`
-- [ ] `js/quote-config.js` → `production` değerleri dolu, `submissionsEnabled: true`
+- [ ] Onaylı KVKK aydınlatma metni sitede yayında; onay kutusu ifadesi avukat tarafından onaylandı
+- [ ] Cloudflare Turnstile widget hostname listesinde `www.foramak.com` ve `foramak.com` var
+- [ ] `js/quote-config.js` → `production`: `turnstileSiteKey` (gerçek site key), `privacyNoticeUrl`
+      (onaylı metnin adresi) dolu, `submissionsEnabled: true`
 - [ ] Site deploy edildi; `https://www.foramak.com/supabase/config.toml` **404** dönüyor (`.vercelignore` çalışıyor)
 - [ ] Canlıda sahte veriyle bir uçtan uca deneme, e-posta hedef kutuya ulaştı
